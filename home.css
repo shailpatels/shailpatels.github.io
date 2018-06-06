@@ -1,0 +1,156 @@
+html,body,footer{
+     font-family: 'Oxygen', sans-serif;
+     padding: 0;
+     margin: 0;
+     overflow-x: hidden;
+     background-color: #E0E0E0;
+}
+h2{
+     line-height: 0em;
+}
+a{
+     text-decoration: none;
+}
+.fa-github:hover, .fa-envelope-square:hover,
+.fa-github-square:hover, .fa-twitter:hover, 
+.fa-instagram:hover, .fa-linkedin:hover{
+     color: #009933;
+}
+.container{
+     display: flex;
+     flex-direction: column;
+     flex-wrap: wrap;
+}
+.post{
+     background-color: white;
+     position: relative;
+     margin: 10px;
+     width: 1000px;
+     height: 600px;
+     margin-bottom: 100px;
+     align-items: center;
+     justify-content: center;
+}
+#personal_info{
+     color:white;
+     background-color: #009933;
+     box-shadow: 2px 2px 2px grey;
+     text-align: center;
+     margin-top: 10px;
+     float: left;
+     position: fixed;
+     height: 80px;
+     width: 300px;
+     padding: 10px;
+     z-index: 1;
+}
+#contact{
+     position: fixed;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     width: 100px;
+     height: 200px;
+     background-color: white;
+     box-shadow: 2px 2px 2px grey;
+     top :120px;
+     text-align: center;
+}
+#social{
+     position: fixed;
+     right: 0;
+     top : 40%;
+     height: 150px;
+     width: 50px;
+     background-color: white;
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     flex-direction: column;
+}
+.post .information{
+     position: absolute;
+     width: 350px;
+     height: 450px;
+     background-color: white;
+     top: 200px;
+     left: 800px;
+     padding: 20px;
+}
+.post .additional-info{
+     position: absolute;
+     width: 100px;
+     height: 200px;
+     background-color: white;
+     top: 50px;
+     left: -50px;
+     padding: 10px;
+     display: flex;
+     flex-direction: column;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: space-around;
+}
+.information > h2 {
+     text-align: center;
+}
+.information > h4 {
+     text-align: center;
+}
+.raised{
+      box-shadow: 2px 2px 2px grey;
+}
+.button{
+     background-color: #009933;
+     padding: 10px;
+     border-radius: 25px;
+     color: white;
+}
+.footer_{
+     background-color: #009933;
+     width: 100%;
+     height: 60px;
+     padding: 10px;
+     color: white;
+     line-height: 0.5em;
+     overflow-y: hidden;
+}
+#modal, #modal-email {
+    display: none;
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
+    justify-content: space-around;
+    align-items: center;
+}
+
+#modal-content {
+     text-align: center; 
+     background-color: #fefefe;
+     padding: 20px;
+     border: 1px solid #888;
+     width: 500px; 
+     height: 650px;
+}
+#modal-content-email{
+     text-align: center; 
+     background-color: #fefefe;
+     padding: 20px;
+     border: 1px solid #888;
+     width: 500px; 
+}
+#legal:hover{
+     color: blue;
+     cursor: pointer;
+}
+.close:hover, .close-email:hover{
+     color: red;
+     cursor: pointer;
+}

@@ -1,0 +1,9 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "wumpus.data.unityweb",
+"asmCodeUrl": "wumpus.asm.code.unityweb",
+"asmMemoryUrl": "wumpus.asm.memory.unityweb",
+"asmFrameworkUrl": "wumpus.asm.framework.unityweb",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}
