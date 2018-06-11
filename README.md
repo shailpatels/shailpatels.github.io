@@ -1,2 +1,1 @@
-# shailpatels.github.io
-\
+# shailpatels.me
