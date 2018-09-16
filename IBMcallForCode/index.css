@@ -1,0 +1,9 @@
+body{
+	font-family: 'Oxygen', sans-serif;
+}
+.container{
+	display: flex;
+	flex-flow: row wrap;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+}
