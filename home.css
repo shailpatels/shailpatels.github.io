@@ -1,62 +1,99 @@
 html,body,footer{
-     font-family: 'Oxygen', sans-serif;
-     padding: 0;
-     margin: 0;
-     overflow-x: hidden;
-     background-color: #E0E0E0;
+    font-family: 'Oxygen', sans-serif;
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+    background-color: #E0E0E0;
 }
-h2{
-     line-height: 0em;
-}
-a{
-     text-decoration: none;
-}
+h2{margin-top: 0;}
+a{text-decoration: none;}
+img{width: 100%;}
 .fa-github:hover, .fa-envelope-square:hover,
 .fa-github-square:hover, .fa-twitter:hover, 
-.fa-instagram:hover, .fa-linkedin:hover{
+.fa-instagram:hover, .fa-linkedin:hover,
+.fa-file:hover{
      color: #009933;
 }
-.container{
-     display: flex;
-     flex-direction: column;
-     flex-wrap: wrap;
+.header{
+    width: 100%;
+    height: 80px;
+    /*background-color: #009933;*/
+}
+.footer{
+    background-color: #009933;
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    color: white;
+    line-height: 0.5em;
+    overflow-y: hidden;
+}
+.posts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .post{
-     background-color: white;
-     position: relative;
-     margin: 10px;
-     width: 50%;
-     height: 600px;
-     margin-bottom: 100px;
-     align-items: center;
-     justify-content: center;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    width: 70%;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 2px 2px 2px grey;
+    max-width: 1000px;
 }
-#personal_info{
-     color:white;
-     background-color: #009933;
-     box-shadow: 2px 2px 2px grey;
-     text-align: center;
-     margin-top: 10px;
-     float: left;
-     position: fixed;
-     height: 80px;
-     width: 300px;
-     padding: 10px;
-     z-index: 1;
+.rounded{
+    border-radius: 10px;
 }
-#contact{
-     position: fixed;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     flex-direction: column;
-     width: 100px;
-     height: 200px;
-     background-color: white;
-     box-shadow: 2px 2px 2px grey;
-     top :120px;
-     text-align: center;
-     z-index: 1;
+.info{
+    width: 50%;
+    margin-left: 10px;
+    max-width: 600px;
+    display: inline-block;
+}
+.additional_info{
+    display: flex;
+    width: 100px;
+    height: 200px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    position: absolute;
+    right: -125px;
+    top:0px;
+    box-shadow: 2px 2px 2px grey;
+}
+#title{
+    position: fixed;
+    background-color: #009933;
+    box-shadow: 2px 2px 2px grey;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    height: 80px;
+    width: 300px;
+    z-index: 1;
+    margin-left: 10px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+#header{
+    display: flex;
+    background-color: #009933;
+    width: 330px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: white;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    box-shadow: 2px 2px 2px grey;
+    margin-bottom: 15px;
 }
 #social{
      position: fixed;
@@ -70,53 +107,25 @@ a{
      align-items: center;
      flex-direction: column;
      z-index: 1;
+     box-shadow: 2px 2px 2px grey;
+     border-bottom-left-radius: 10px;
+      border-top-left-radius: 10px;
 }
-.post .information{
-     position: absolute;
-     width: 350px;
-     height: 450px;
-     background-color: white;
-     top: 200px;
-     right: -22%;
-     padding: 20px;
+#contact{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
 }
-.post .additional-info{
-     position: absolute;
-     width: 100px;
-     height: 200px;
-     background-color: white;
-     top: 50px;
-     left: -50px;
-     padding: 10px;
-     display: flex;
-     flex-direction: column;
-     flex-wrap: wrap;
-     align-items: center;
-     justify-content: space-around;
-}
-.information > h2 {
-     text-align: center;
-}
-.information > h4 {
-     text-align: center;
-}
-.raised{
-      box-shadow: 2px 2px 2px grey;
-}
-.button{
-     background-color: #009933;
-     padding: 10px;
-     border-radius: 25px;
-     color: white;
-}
-.footer_{
-     background-color: #009933;
-     width: 100%;
-     height: 60px;
-     padding: 10px;
-     color: white;
-     line-height: 0.5em;
-     overflow-y: hidden;
+#contact_box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 120px;
+    background-color: white;
+    box-shadow: 2px 2px 2px grey;
 }
 #modal, #modal-email {
     display: none;
