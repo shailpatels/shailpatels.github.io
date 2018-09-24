@@ -6,7 +6,7 @@ html,body,footer{
     background-color: #E0E0E0;
 }
 h2{margin-top: 0;}
-a{text-decoration: none;}
+a, a:visited, a:link, a:active{text-decoration: none !important;}
 img{width: 100%;}
 .fa-github:hover, .fa-envelope-square:hover,
 .fa-github-square:hover, .fa-twitter:hover, 
@@ -67,6 +67,17 @@ img{width: 100%;}
     top:0px;
     box-shadow: 2px 2px 2px grey;
 }
+.button{
+    background-color: #009933;
+    box-shadow: 2px 2px 2px grey;
+    border-radius: 20px;
+    height: 35px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+}
 #title{
     position: fixed;
     background-color: #009933;
@@ -80,6 +91,19 @@ img{width: 100%;}
     margin-left: 10px;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
+}
+#nav{
+    text-align: center;
+    background-color: #009933;
+    position: absolute;
+    left: 350px;
+    height: 80px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    color: white;
+    width: 100px;
+    padding: 10px;
+    box-shadow: 2px 2px 2px grey;
 }
 #header{
     display: flex;
