@@ -3,7 +3,6 @@ html,body,footer{
     overflow-x: hidden;
     padding: 0;
     margin: 0;
-    background: url(http://www.cs.rpi.edu/academics/courses/fall17/csci1200/images/buttons_smaller.png);
 }
 h2{margin-top: 0;}
 a, a:visited, a:link, a:active{text-decoration: none !important;}
