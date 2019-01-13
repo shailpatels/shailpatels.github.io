@@ -7,10 +7,25 @@ hr{
     border-top: 1.5px solid black;
     border-bottom: 0px;
 }
+a:link, a:visited{
+	text-decoration : none;
+	color:inherit;
+}
 .flex_section{
     display: flex;
     justify-content: center;
     flex-shrink: 0;
+}
+
+.flex_list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header_link:hover{
+    color: blue;
 }
 
 .project{
@@ -19,6 +34,7 @@ hr{
     background-color: white;
     display: flex;
     flex-direction: row;
+    box-shadow: 2px 2px 5px grey;
 }
 
 .right{
@@ -26,13 +42,37 @@ hr{
     flex-direction: column;
     align-items: center;
 }
-
+.hlist{
+	display: flex;
+	flex-direction : row;
+	width : 400px;
+	justify-content : space-between;
+	height : 100px;
+	align-items:center;
+}
 .background_img{
     width: 100%;
     height: 250px; 
     align-items: center;
+    opacity : 0.7777777;
 }
-
+.fas, .fab{
+	color:black;
+}
+.fas:hover, .fab:hover{
+	color:#319e3d;
+}
+.demo_link{
+	height 15px;
+	padding: 10px;
+	background-color:#319e3d;
+	border-radius : 25px;
+	color: white;
+    	box-shadow: 2px 2px 5px grey;
+}
+.demo_link:hover{
+	box-shadow : none;
+}
 #name{
     background-color: #319e3d;
     color: white;
@@ -44,4 +84,10 @@ hr{
 #content{
     flex-direction: column;
     align-items: center;
+}
+#footer{
+    margin-top: 15px;
+	background-color: #319e3d;
+	width:100%;
+	height:60px;
 }
