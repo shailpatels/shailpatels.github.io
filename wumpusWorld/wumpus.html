@@ -1,100 +1,27 @@
 <!DOCTYPE html>
 <html lang="en-us">
-     <head>
-          <title>ShailPatels.me</title>
-          <link rel="stylesheet" href="../home.css">
-          <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
-          <!-- Font awesome -->
-          <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
-          <!-- Unity -->
-          <script src="TemplateData/UnityProgress.js"></script>  
-          <script src="Build/UnityLoader.js"></script>
-          <script>
-               var gameInstance = UnityLoader.instantiate("gameContainer", "Build/wumpus.json", {onProgress: UnityProgress});
-          </script>
-     </head>
-     <body>
-          <div id="title">
-            <a style = "color:white;"href = "http://shailpatels.me/"><h1 style="line-height: 0.4em;">Shail Patel</h1></a>
-            <hr>
-            <p style="line-height: 0.2em;"> Computer & Cognitive Science @ RPI</p>
-          </div>
-          <div id="header" style="margin-top: 120px;"><h1>Wumpus World</h1></div>
-          <div id="social" class = "raised">
-               <a href="https://twitter.com/shailpatels" target="_blank" style="color: black;"><i class="fab fa-twitter fa-2x"></i></a>
-               <a href="https://www.instagram.com/shailpatels/" target="_blank" style="color: black;"><i class="fab fa-instagram fa-2x"></i></a>
-               <a href="https://www.linkedin.com/in/shailpatels/" target="_blank" style="color: black;"><i class="fab fa-linkedin fa-2x"></i></a>
-          </div>
-          <div class = "posts" style="width: 100%; align-items: center;">
-               <div class="webgl-content" style="width: 85%; margin: 120px; margin-left: 300PX;">
-                    <div id="gameContainer" style="width: inherit; height: 100%; padding: 0px; margin: 0px; border: 0px; position: relative; background: rgb(35, 31, 32);">
-                         <canvas id="#canvas" style="width: 100%; height: 100%;"></canvas>
-                    </div>
-               </div>
-               <div class = "rounded post">
-                    <object data="../documents/wumpusWorldAlgo.pdf" type="application/pdf" width="750px;" height="600px" internalinstanceid="4"><a href="../files/wumpusWorldAlgo.pdf">Visual Logic - abstract</a></object>
-                    <br>
-                    <a class = "button raised"style="margin: 10px;" href="../documents/wumpusWorldAlgo.pdf" target="_blank">Open PDF in new window</a>
-               </div>
-          </div>
-          <div id="modal">
-               <div id="modal-content">
-                    <span class="close" style="float: right;">&times;</span>
-                    <h2>Terms & Conditions</h2>
-                    <object data="../legal.html" style="width: 100%;height: 80%;">Could not access document</object>
-               </div>
-          </div>
-          <!-- email incase mailto isn't supported -->
-          <div id="modal-email">
-               <div id="modal-content-email">
-                    <span class="close-email" style="float: right;">&times;</span>
-                    <h2>shailpatel67@gmail.com</h2>
-               </div>
-          </div>
-     </body>
-        <div id="header" style=" margin-top: 10px;"><h1>Contact</h1></div>
-     <div id="contact">
-          <div id="contact_box" class="rounded">
-           <a href="https://github.com/shailpatels" target="_blank" style="color:black;padding-right:20px;"><i class="fab fa-github-square fa-5x"></i></a>
-           <a href="documents/resume.pdf" target="_blank" style="color:black;"><i class="fas fa-file fa-5x"></i></a>
-          <a id="email"href="mailto:shailpatel67@gmail.com" style="color: black;padding-left: 20px;"><i class="fas fa-envelope-square fa-5x"></i></a>
-     </div>
-     </div>
-      <footer class = "footer">
-          <p>Shail Patel 2018 &copy;</p>
-          <p id = "legal">Terms & Conditions</p>
-     </footer>
+<head>
+	<title>ShailPatels.me</title>
+  	<link rel="stylesheet" href="../home.css">
+</head>
+<body>
+	<header class="flex_section">
+		<div id="name">
+		   <h1 style="margin-top: 20px;">Shail Patel</h1>
+		   <p>Computer & Cognitive Science @ RPI</p>
+		   <a class ="header_link" style = "text-decoration: underline;"href = "../index.html">Home</a>
+		</div>
+	</header>
+	<section class="flex_list" style="flex-direction: column;">
+		<h2 style="margin:15px;">Wumpus World</h2>
+		<div class=" ">
+			<object width="700px" height="700px" data="../documents/wumpusWorldAlgo.pdf"></object>
+		</div>
+		<h2 style="margin: 15px;">A simulation was also used to help with development</h2>
+		<img src = "../images/WW_sim_1.JPG">
+	</section>
+	<section id="footer">
+		<p style="color:white; padding:10px;"> &copy; 2019 Shail Patel </p>
+	</section>
+</body>
 </html>
-<script type="text/javascript">
-     var modal = document.getElementById('modal');
-     var btn = document.getElementById("legal");
-     var span = document.getElementsByClassName("close")[0];
-
-     btn.onclick = function() {
-         modal.style.display = "flex";
-     }
-     span.onclick = function() {
-         modal.style.display = "none";
-     }
-     window.onclick = function(event) {
-         if (event.target == modal) {
-             modal.style.display = "none";
-         }
-     }
-
-     var modal_e = document.getElementById('modal-email');
-     var btn_e = document.getElementById("email");
-     var span_e = document.getElementsByClassName("close-email")[0];
-
-     btn_e.onclick = function() {
-         modal_e.style.display = "flex";
-     }
-     span_e.onclick = function() {
-         modal_e.style.display = "none";
-     }
-     window.onclick = function(event) {
-         if (event.target == modal) {
-             modal_e.style.display = "none";
-         }
-     }
-</script>

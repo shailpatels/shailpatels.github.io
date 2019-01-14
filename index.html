@@ -3,156 +3,88 @@
 <head>
      <title>ShailPatels.me</title>
      <link rel="stylesheet" href="home.css">
-     <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
-     <!-- Font awesome -->
-     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 </head>
 
 <body>
-    <div id="overlay"></div>
-     <div id="title">
-          <h1 style="line-height: 0.4em;">Shail Patel</h1>
-          <hr>
-          <p style="line-height: 0.2em;"> Computer & Cognitive Science @ RPI</p>
-     </div>
-     <div id="nav">
-          <a style = "color:white;" href="http://shailpatels.me/research"><h2 style="margin-top: 10px; line-height: 1em;">Research</h2></a>
-          <hr>
-     </div>
-     <div id="social">
-          <a href="https://twitter.com/shailpatels" target="_blank" style="color: black;"><i class="fab fa-twitter fa-2x"></i></a>
-          <a href="https://www.instagram.com/shailpatels/" target="_blank" style="color: black;"><i class="fab fa-instagram fa-2x"></i></a>
-          <a href="https://www.linkedin.com/in/shailpatels/" target="_blank" style="color: black;"><i class="fab fa-linkedin fa-2x"></i></a>
-     </div>
-     <div id="header" style=" margin-top: 120px;"><h1>Selected Projects:</h1></div>
-     <div class="posts">
-          <div class = "post rounded">
-               <div style="width: 30%;" ><img class="rounded"src="images/vlTitle.png"></div>
-               <div class="info">
-                    <h2>Visual Logic</h2>
-                    <p>Visual Logic is a tool to represent existential graphs, a visual notation for logic expressions. Programmed as a console and web application in Unity and C#.</p>
-                    <p>Developed as an independent study with Professor <a href="http://www.cogsci.rpi.edu/pl/faculty-staff-cogsci/bram-van-heuveln" target="_blank">Bram van Heuveln</a></p><br>
-                    <a href = "http://shailpatels.me/vl_web/vlDemo.html" class = "button raised">Demo</a>
-               </div>
-               <div class="additional_info rounded">
-                    <img src = "images/VL_logo.png"><br>
-                    <a href="https://github.com/Bram-Hub/VisualLogic" target="_blank" style="color:black;"><i class="fab fa-github fa-4x"></i></a>
+	<div id = "social">
+		<a href="https://www.linkedin.com/in/shailpatels/" target="_blank"><i class = "fab fa-linkedin fa-2x"></i></a>
+		<a href="https://twitter.com/shailpatels" target="_blank"><i class = "fab fa-instagram fa-2x"></i></a>
+		<a href="https://www.instagram.com/shailpatels/" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+	</div>
+     <header class="flex_section">
+          <div id="name">
+               <h1 style="margin-top: 20px;">Shail Patel</h1>
+               <p>Computer & Cognitive Science @ RPI</p>
+               <a class="header_link" style = "text-decoration: underline;" href ="#contact">Contact</a>
+          </div>
+     </header>
+     <section class="flex_section" id="content">
+          <h2 style="margin:15px;">Selected Projects</h2>
+          <div class="background_img flex_section" style="background-image: url('images/FSS_background.JPG');">
+               <div class="project">
+                    <img src="images/FSS_preview.JPG" width="400px">
+                    <div class="right">
+                         <p style="margin:15px;">Finate State Machine builder is a tool to quickly prototype and display FSMs,
+                         built with native JS and the HTML canvas</p>
+			 			<div class = "demo_link" > <a target = "_blank" href="FSS/index.html">Demo</a> </div>
+                    </div>
                </div>
           </div>
-
-          <div class = "post rounded">
-               <div style="width: 30%;" ><img class="rounded"src="images/submittyTitle.png"></div>
-               <div class="info">
-                    <h2>Submitty</h2>
-                    <p >I work on the <a href="http://submitty.org/" target="_blank">Submitty</a> team :)  </p>
-                    <p>Submitty is an open source programming assignment submission system from the Rensselaer Center for Open Source Software (RCOS), launched by the Department of Computer Science at Rensselaer Polytechnic Institute.</p>
-               </div>
-               <div class="additional_info rounded">
-                    <img style="width: 85px;" src = "images/submittyIcon.ico"><br>
-                    <a href="https://github.com/Submitty" target="_blank" style="color:black;"><i class="fab fa-github fa-4x"></i></a>
-               </div>
-          </div>
-
-
-          <div class = "post rounded">
-               <div style="width: 30%;" ><img class="rounded"src="images/cityCube.png"></div>
-               <div class="info">
-               <h2>CityCube</h2>
-               <h4> &#8249;Hack&#8250; Tech Valley 2018 finalist project!</h4>
-               <p>A web app that allows people to connect in cities. Currently only implemented for the city of Schenectady. Gets data from Facebook, Twitter and Google News.</p>
-               </div>
-               <div class="additional_info rounded">
-                     <a href="https://github.com/shailpatels/Vision" target="_blank" style="color:black;"><i class="fab fa-github fa-4x"></i></a>
-               </div>
-          </div>
-
-
-          <div class = "post rounded">
-               <div style="width: 30%;" ><img class="rounded"src="images/legorobot.jpg"></div>
-               <div class="info">
-                    <h2>Wumpus World</h2>
-                    <p>Current progress on Cognitive Science final project:</p>
-                    <p>Wumpus world is a programming challenge involving an agent attempting to make logical infrences about its enviroment</p>
-                    <p>I developed the algorithm and programmed the robot, I also made a simulation for testing purposes.</p><br>
-                    <a href = "http://shailpatels.me/wumpusWorld/wumpus.html" class = "button raised">Simulation & Algorithim</a>
-               </div>
-               <div class="additional_info rounded">
-               <a href="https://github.com/shailpatels/WumpusWorld" target="_blank" style="color:black;"><i class="fab fa-github fa-4x"></i></a>
-            </div>
-          </div>
-     </div>
-     <div id="header" style=" margin-top: 10px;"><h1>Contact</h1></div>
-     <div id="contact">
-          <div id="contact_box" class="rounded">
-           <a href="https://github.com/shailpatels" target="_blank" style="color:black;padding-right:20px;"><i class="fab fa-github-square fa-5x"></i></a>
-           <a href="documents/resume.pdf" target="_blank" style="color:black;"><i class="fas fa-file fa-5x"></i></a>
-          <a id="email"href="mailto:shailpatel67@gmail.com" style="color: black;padding-left: 20px;"><i class="fas fa-envelope-square fa-5x"></i></a>
-     </div>
-     </div>
-     
-      <!-- legal -->
-     <div id="modal">
-        <div id="modal-content">
-             <span class="close" style="float: right;">&times;</span>
-             <h2>Terms & Conditions</h2>
-             <object data="legal.html" style="width: 100%;height: 80%;">Could not access document</object>
-        </div>
-     </div>
-
-     <!-- email incase mailto isn't supported -->
-     <div id="modal-email">
-        <div id="modal-content-email">
-             <span class="close-email" style="float: right;">&times;</span>
-             <h2>shailpatel67@gmail.com</h2>
-        </div>
-     </div>
-     <footer class="footer">
-          <p>2&copy; 2019 Shail Patel</p>
-          <p id = "legal">Terms & Conditions</p>
-     </footer>
+	  <div class="background_img flex_section" style = "background-image: url(images/VL_background.JPG); background-position : center; background-size : cover;">
+		<div class = "project">
+			<img src = "images/VL_preview.JPG" width = "400px">
+			<div class = "right">
+				<p style="margin : 15px;">Visual Logic is a graphical way of displaying formal graphs using exisential graphs. Build with Unity
+				</p>
+				<div class = "demo_link"><a target = "_blank" href = "vl_web/vlDemo.html">Demo</a></div>
+			</div>
+		</div>
+	  </div>
+	  <div class = "background_img flex_section" style = "background-image : url('images/SUB_background.JPG');">
+		<div class = "project">
+			<img src = "images/SUB_preview.JPG" width = "400px">
+			<div class = "right">
+				<p style="margin : 15px;">
+				I work on the <a href = "https://submitty.org/" style = "color : blue ">Submitty</a> Team <br/> 
+				Submitty is an open source programming assignment submission system from the Rensselaer Center for Open Source Software (RCOS), 
+				launched by the Department of Computer Science at Rensselaer Polytechnic Institute.
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class = "background_img flex_section" style = "background-image : url('images/WW_background.JPG'); background-size : contain;">
+		<div class = "project">
+			<img src = "images/WW_preview.jpg" width = "400px">	
+			<div class = "right">	
+				<p style="margin : 15px;">
+				Wumpus world is a programming challenge involving an agent attempting to make logical infrences about its enviroment  
+				<br/>I developed the algorithm and programmed the robot, I also made a simulation for testing purposes.
+				</p>
+				<div class = "demo_link" ><a target = "_blank" href="wumpusWorld/wumpus.html">Demo and Simulation</a></div>
+			</div>
+		</div>
+	</div>
+     </section>
+     <section style="display:flex; flex-direction:column;align-items:center;justify-content:center;" id="contact">
+	<h2 style="margin:15px;">Contact</h2>	
+	<div class = "hlist">
+		<a href = "https://github.com/shailpatels" target = "_blank"><i class="fab fa-5x  fa-github-square"></i></a>	
+		<a href = "documents/resume.pdf" target = "_blank"><i class="fas fa-file fa-5x"></i></a>
+		<a href = "mailto:shailpatel67@gmail.com"><i class = "fas fa-envelope fa-5x"></i></a>
+	</div>
+	</section>
+	<section id="footer">
+		<p style="color:white; padding:10px;"> &copy; 2019 Shail Patel </p>
+	</section>
 </body>
 </html>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131444245-1"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
 
-  gtag('config', 'UA-131444245-1');
-</script>
-
-
-<script type="text/javascript">
-     var modal = document.getElementById('modal');
-     var btn = document.getElementById("legal");
-     var span = document.getElementsByClassName("close")[0];
-
-     btn.onclick = function() {
-         modal.style.display = "flex";
-     }
-     span.onclick = function() {
-         modal.style.display = "none";
-     }
-     window.onclick = function(event) {
-         if (event.target == modal) {
-             modal.style.display = "none";
-         }
-     }
-
-     var modal_e = document.getElementById('modal-email');
-     var btn_e = document.getElementById("email");
-     var span_e = document.getElementsByClassName("close-email")[0];
-
-     btn_e.onclick = function() {
-         modal_e.style.display = "flex";
-     }
-     span_e.onclick = function() {
-         modal_e.style.display = "none";
-     }
-     window.onclick = function(event) {
-         if (event.target == modal) {
-             modal_e.style.display = "none";
-         }
-     }
+	gtag('config', 'UA-131444245-1');
 </script>
