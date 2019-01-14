@@ -68,7 +68,7 @@ a:link, a:visited{
 	background-color:#319e3d;
 	border-radius : 25px;
 	color: white;
-    	box-shadow: 2px 2px 5px grey;
+    box-shadow: 2px 2px 5px grey;
 }
 .demo_link:hover{
 	box-shadow : none;
@@ -79,6 +79,20 @@ a:link, a:visited{
     width: 400px;
     height: 100px;
     text-align: center;
+}
+#social{
+    position: fixed;
+    width: 60px;
+    right: 0px;
+    top : 40%;
+    height: 125px;
+    background-color: white;
+    z-index: 1;
+    box-shadow: 2px 2px 5px grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #content{
