@@ -4,6 +4,15 @@
      <title>ShailPatels.me</title>
      <link rel="stylesheet" href="home.css">
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    
+     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	 <meta name="Description" content="I'm Shail Patel - a computer and cognitive science undergrad at RPI, 
+	 this is my personal website">
+	 <meta name="keywords" content="Shail Patel,personal website,computer,cognitive,CS,portfolio">
 </head>
 
 <body>
@@ -16,62 +25,71 @@
           <div id="name">
                <h1 style="margin-top: 20px;">Shail Patel</h1>
                <p>Computer & Cognitive Science @ RPI</p>
-               <a class="header_link" style = "text-decoration: underline;" href ="#contact">Contact</a>
+               <a class="header_link" href ="#contact">Contact</a>
+               <a class="header_link" href ="research.html">Research</a>
           </div>
      </header>
      <section class="flex_section" id="content">
           <h2 style="margin:15px;">Selected Projects</h2>
           <div class="background_img flex_section" style="background-image: url('images/FSS_background.JPG');">
                <div class="project">
-                    <img src="images/FSS_preview.JPG" width="400px">
+                    <img src="images/FSS_preview.JPG" width="400px" height="200px">
                     <div class="right">
                          <p style="margin:15px;">Finate State Machine builder is a tool to quickly prototype and display FSMs,
                          built with native JS and the HTML canvas</p>
-			 			<div class = "demo_link" > <a target = "_blank" href="FSS/index.html">Demo</a> </div>
+                         <div class = "h_list">
+			 			 	<a class="h_item" style="text-decoration: none;"target = "_blank" href="FSS/index.html"><div class = "demo_link" >Demo </div> </a>
+			 			 	<a class = "h_item" style="text-decoration: none;"target = "_blank" href="https://github.com/shailpatels/FSS"><div class = "demo_link" >GitHub </div> </a>
+			 			</div>
                     </div>
                </div>
           </div>
 	  <div class="background_img flex_section" style = "background-image: url(images/VL_background.JPG); background-position : center; background-size : cover;">
 		<div class = "project">
-			<img src = "images/VL_preview.JPG" width = "400px">
+			<img src = "images/VL_preview.JPG" width = "400px" height="200px">
 			<div class = "right">
 				<p style="margin : 15px;">Visual Logic is a graphical way of displaying formal graphs using exisential graphs. Build with Unity
 				</p>
-				<div class = "demo_link"><a target = "_blank" href = "vl_web/vlDemo.html">Demo</a></div>
+				<div class="h_list">
+					<a class="h_item"style="text-decoration: none;" target = "_blank" href = "vl_web/vlDemo.html"><div class = "demo_link">Demo</div> </a>
+					<a class="h_item"style="text-decoration: none;" target = "_blank" href = "https://github.com/Bram-Hub/VisualLogic"><div class = "demo_link">GitHub</div> </a>
+				</div>
 			</div>
 		</div>
 	  </div>
 	  <div class = "background_img flex_section" style = "background-image : url('images/SUB_background.JPG');">
 		<div class = "project">
-			<img src = "images/SUB_preview.JPG" width = "400px">
+			<img src = "images/SUB_preview.JPG" width = "400px" height="200px">
 			<div class = "right">
 				<p style="margin : 15px;">
 				I work on the <a href = "https://submitty.org/" style = "color : blue ">Submitty</a> Team <br/> 
 				Submitty is an open source programming assignment submission system from the Rensselaer Center for Open Source Software (RCOS), 
 				launched by the Department of Computer Science at Rensselaer Polytechnic Institute.
 				</p>
+				<a class="h_item"style="text-decoration: none;" target = "_blank" href = "https://github.com/Submitty/Submitty"><div class = "demo_link">GitHub</div> </a>
 			</div>
 		</div>
 	</div>
 	<div class = "background_img flex_section" style = "background-image : url('images/WW_background.JPG'); background-size : contain;">
 		<div class = "project">
-			<img src = "images/WW_preview.jpg" width = "400px">	
+			<img src = "images/WW_preview.jpg" width = "400px" height="250px">	
 			<div class = "right">	
 				<p style="margin : 15px;">
 				Wumpus world is a programming challenge involving an agent attempting to make logical infrences about its enviroment  
 				<br/>I developed the algorithm and programmed the robot, I also made a simulation for testing purposes.
 				</p>
-				<div class = "demo_link" ><a target = "_blank" href="wumpusWorld/wumpus.html">Demo and Simulation</a></div>
+				<a style="text-decoration: none;" target = "_blank" href="wumpusWorld/wumpus.html">
+					<div class = "demo_link">Demo and Simulation</div> </a>
 			</div>
 		</div>
 	</div>
      </section>
      <section style="display:flex; flex-direction:column;align-items:center;justify-content:center;" id="contact">
 	<h2 style="margin:15px;">Contact</h2>	
-	<div class = "hlist">
-		<a href = "https://github.com/shailpatels" target = "_blank"><i class="fab fa-5x  fa-github-square"></i></a>	
-		<a href = "documents/resume.pdf" target = "_blank"><i class="fas fa-file fa-5x"></i></a>
-		<a href = "mailto:shailpatel67@gmail.com"><i class = "fas fa-envelope fa-5x"></i></a>
+	<div class = "h_list">
+		<a href = "https://github.com/shailpatels" target = "_blank"><i style="padding: 25px;" class="fab fa-5x  fa-github-square"></i></a>	
+		<a href = "documents/resume.pdf" target = "_blank"><i style="padding: 25px;" class="fas fa-file fa-5x"></i></a>
+		<a href = "mailto:shailpatel67@gmail.com"><i style="padding: 25px;" class = "fas fa-envelope fa-5x"></i></a>
 	</div>
 	</section>
 	<section id="footer">
