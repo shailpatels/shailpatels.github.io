@@ -1,3 +1,3 @@
 # shailpatels.me
 
-My personal website
+Personal website for showcasing my projects
