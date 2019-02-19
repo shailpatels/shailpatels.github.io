@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<title>Existential Graphs</title>
+	<link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+<div id="container">
+	<h1>Existential Graphs</h1>
+	<section id="background" class="flex">
+		<h2>Background</h2>
+		<div class="child">
+			<p>
+				About 100 years ago, one of the founders of modern formal logic, the American logician and philosopher of language Charles Saunders Peirce, expressed concerns regarding the traditional linear notation of formal logic. Thus, Peirce proposed an alternative system with a more graphical notation, called Existential Graphs <i> (Peirce, 1933) </i>.
+			</p>
+			<p>
+				Existential Graphs are a little-known diagrammatic representation that can be used for propositional, quantificational, and modal logic. They hardly use any special symbols and contain only 4 rules of inferences but are sound and complete.
+			</p>
+		</div>
+		<hr>
+	</section>
+	<section id="intro" class="flex">
+		<h2>Symbolization</h2>
+		<i> Peirce developed three varieties of Existential Graphs: Alpha, Beta, and Gamma </i>
+		<h3>Alpha</h3>
+		<div class="child">
+			<p>
+				Alpha is the part of Existential Graphs <i>(EG)</i> corresponding to propositional logic <i>(PL)</i>.
+			</p>
+			<p>
+				To assert some statement in EG, you put the symbolization of that statement on a sheet of paper, called the <i> 'Sheet of Assertion' (SA) </i>. 
+			</p>
+			<div class="figure">
+				<div class="flex-row">
+					<img src="images/SA1.PNG" width="250" height="250">
+					<img src="images/SA2.PNG" width="250" height="250">
+				</div>
+				<p><i>Notice that the location of the symbolization on the SA does not matter: </i></p>
+			</div>
+			<br>
+		</div>
+		<h3>Juxtaposition and Conjunction</h3>
+		<div class="child">
+			<p>
+				By drawing the symbolization of two statements on the SA, you are asserting the truth of both statements at once. Therefore, mere juxtaposition of two symbolizations on the SA can be interpreted as the assertion of a single conjunction. 
+			</p>
+			<div class="figure">
+				<div class="flex-row">
+					<img src="images/SA3.PNG" height="250">
+				</div>
+				<p>This EG can be interpreted as the assertion of two statements: <i>P</i>, <i>Q</i> or as a conjunction: <i>P</i> &and; <i>Q</i> </p>
+			</div>
+			<p>
+				Since any number of symbolizations can be juxtaposed on the SA, juxtaposition becomes a kind of generalized conjunction. Since the location of each of the symbolizations on the SA does not matter, no particular order on these conjuncts is imposed. This coincides with our abstract understanding of conjunction which gives Existential Graphs an important advantage over the linear notation of traditional propositional logic.
+			</p>
+			<p>
+				For example by symbolizing <i> P, Q </i> on the SA, the EG can represent <i> P </i>, <i> Q </i>, <i>P</i> &and; <i> Q </i>, and <i>Q</i> &and; <i>P</i> all at once!
+			</p>
+			<br>
+		</div>
+		<h3>Cuts and Negation</h3>
+		<div class="child">
+			<p>
+				Asserting a negation can be done by drawing a cut around a symbol. A cut can be any enclosing figure. In Existential Graphs, an empty graph represents a tautology whereas an empty cut represents a contradiction.
+				<div class="figure">
+					<div class="flex-row">
+						<img src="images/CUT1.PNG" height="250">
+						<img src="images/CUT2.PNG" height="250">
+						<img src="images/CUT3.PNG" height="250">
+					</div>
+					<div class="flex-row" style="margin-top:-10px">
+						<p>This EG represents: &not;<i>P</i></p>
+						<p>This EG represents a Tautology: &top;</p>
+						<p>This EG represents a Contradiction: &bot;
+					</div>
+				</div>
+			</p>
+			<div class="figure">
+				<p>Cuts can be nested, each nested symbol is one level above its parent. </p>
+				<div class="flex-row">
+					<img src="images/NESTED.PNG" height="250">
+				</div>
+				<P>In this EG <i>P</i> and <i>Q</i> is level 2, the cuts surrounding them are level 1, and the outermost cut is level 0</P>
+			</div>
+			<p>
+				So far using these rules of symbolization can represent conjunction, negation, and simple letters for atomic statements, any compound or truth functional statement can be represented by an Existential Graph. Because conjunction and negation form an expressively complete set of operators, EG is also expressively complete. 
+			</p>
+			<!-- add figures for EG to PL and PL to EG -->
+			<!-- <div class="figure">
+				<div class="flex-row">
+					<img src="images/EGtoPL.PNG" height="250">
+				</div>
+				<p>Examples of EG to propositional logic</p>
+			</div> -->
+		</div>
+		<hr>
+	</section>
+	<section id="inference" class="flex">
+		<h2>Rules of Inference</h2>
+		<i>Alpha has four inference rules: Insertion, Erasure, Double cut, Iteration/Deiteration</i>
+		<h3>Insertion</h3>
+		<div class="child">
+			<p>
+				Insertion allows inserting a graph at any odd level.
+			</p>
+		</div>
+	</section>
+</div>
+</body>
