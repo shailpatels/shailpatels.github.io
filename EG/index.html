@@ -99,12 +99,50 @@
 	</section>
 	<section id="inference" class="flex">
 		<h2>Rules of Inference</h2>
-		<i>Alpha has four inference rules: Insertion, Erasure, Double cut, Iteration/Deiteration</i>
+		<i>Alpha has four rules: Insertion, Erasure, Double cut, Iteration/Deiteration</i>
+		<p>
+			Insertion and Erasure are rules of inference while Double cut and Iteration/Deiteration are rules of Equivalence.  
+		</p>
 		<h3>Insertion</h3>
+		<br>
+		<p>
+			Insertion allows inserting a graph at any odd level.
+		</p>
+		<div class="figure">
+			<div class="flex-row">
+				<!-- <img src ="images/INSERT1.gif" height="250"> -->
+			</div>
+		</div>
+		<p>
+			Erasure allows erasing any graph from any even level.
+		</p>
+		<p>
+			Double Cut allows drawing or erasing a double cut around any subgraph. This is similar to a double negation in propositional logic.
+		</p>
+		<p>
+			Iteration/Deiteration allows placing or erasing a copy of any subgraph at any nested level.
+		</p>
+		<hr>
+	</section>
+	<section id="proofs" class="flex">
 		<div class="child">
 			<p>
-				Insertion allows inserting a graph at any odd level.
+				A formal proof in Existential Graphs consists in the successive application of inference rules to transform one graph into another. Formal proofs in EG are used just as in traditional logic
 			</p>
+			<ul style="margin-left: 35px;">
+				<li>
+					To show that an argument is valid: transform the graph of the premises into the graph of the conclusion.
+				</li>
+				<li>
+					To show that a set of statements is inconsistent: transform the graph of the statements into an empty cut.
+				</li>
+				<li>
+					To show that two statements are equivalent: transform the one into the other, and vice versa.
+				</li>
+				<li>
+					To show that a statement is a tautology: transform an empty graph into the graph of that statement.
+				</li>
+			</ul>
 		</div>
 	</section>
 </div>
