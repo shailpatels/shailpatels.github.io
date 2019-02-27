@@ -14,6 +14,12 @@ hr{
 	border-top: 1px solid black;
 	margin: 10px;
 }
+footer{
+	/*background-color: #d4d4d4;*/
+	padding: 20px;
+	margin-top: 20px;
+	border-top: 1px solid black;
+}
 .flex{
 	padding: 15px;
 	padding-bottom: 0px;

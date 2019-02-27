@@ -87,13 +87,12 @@
 			<p>
 				So far using these rules of symbolization can represent conjunction, negation, and simple letters for atomic statements, any compound or truth functional statement can be represented by an Existential Graph. Because conjunction and negation form an expressively complete set of operators, EG is also expressively complete. 
 			</p>
-			<!-- add figures for EG to PL and PL to EG -->
-			<!-- <div class="figure">
+			<div class="figure">
 				<div class="flex-row">
-					<img src="images/EGtoPL.PNG" height="250">
+					<img src="images/EGtoPL.PNG" height="250" style="padding: 10px">
 				</div>
 				<p>Examples of EG to propositional logic</p>
-			</div> -->
+			</div>
 		</div>
 		<hr>
 	</section>
@@ -104,7 +103,6 @@
 			Insertion and Erasure are rules of inference while Double cut and Iteration/Deiteration are rules of Equivalence.  
 		</p>
 		<h3>Insertion</h3>
-		<br>
 		<p>
 			Insertion allows inserting a graph at any odd level.
 		</p>
@@ -113,6 +111,7 @@
 				<img src ="images/INSERT1.gif" height="250">
 			</div>
 		</div>
+		<h3>Erasure</h3>
 		<p>
 			Erasure allows erasing any graph from any even level.
 		</p>
@@ -121,12 +120,29 @@
 				<img src ="images/ERASURE1.gif" height="250">
 			</div>
 		</div>
+		<h3>Double Cut</h3>
 		<p>
 			Double Cut allows drawing or erasing a double cut around any subgraph. This is similar to a double negation in propositional logic.
 		</p>
+		<div class="figure">
+			<div class="flex-row">
+				<img src ="images/DCUT1.gif" height="250">
+			</div>
+		</div>
+		<h3>Iteration/Deiteration</h3>
 		<p>
 			Iteration/Deiteration allows placing or erasing a copy of any subgraph at any nested level.
 		</p>
+		<div class="figure">
+			<div class="flex-row">
+				<img src ="images/ITER1.gif" height="250">
+				<img src ="images/ITER2.gif" height="250">
+			</div>
+			<div class="flex-row">
+				<p>Iteration</p>
+				<p>Deiteration</p>
+			</div>
+		</div>
 		<hr>
 	</section>
 	<section id="proofs" class="flex">
@@ -151,4 +167,16 @@
 		</div>
 	</section>
 </div>
+
+<footer>
+	<h3>References and Related work</h3>
+	<a href = "http://shailpatels.me" target="_blank">Shail Patel</a> <br>
+	<a href = "http://www.cogsci.rpi.edu/~heuveb/" target="_blank">Bram van Heuveln</a> 
+	<p>Examples were made in <a href = "https://shailpatels.me/vl_web/index.html" target="_blank">Visual Logic</a>, an <a href = "https://github.com/Bram-Hub/VisualLogic" target="_blank">open source</a> program for working with Existential Graphs.</p>
+	<p>Further Reading:</p>
+	<ul style="margin-left: 25px">
+		<li><a href="http://www.cogsci.rpi.edu/~heuveb/Research/EG/index.html" target="_blank">Existential Graphs <i>(Bram van Heuveln)</i></a></li>
+		<li><a href="https://plato.stanford.edu/archives/win2018/entries/peirce/" target="_blank">Charles Sanders Peirce, Stanford Encyclopedia of Philosophy <i>(Burch, Robert)</i></a></li>
+	</ul>
+</footer>
 </body>
