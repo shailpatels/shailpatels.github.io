@@ -9,16 +9,26 @@
     <script src="TemplateData/UnityProgress.js"></script>  
     <script src="Build/UnityLoader.js"></script>
     <script>
-      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/vl_web.json", {onProgress: UnityProgress});
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/test.json", {onProgress: UnityProgress});
     </script>
+    <style type="text/css">
+      html{
+        font-family: Arial,Helvetica Neue,Helvetica,sans-serif; 
+      }
+    </style>
   </head>
   <body>
-    <div class="webgl-content">
+    <div><img src="vl_logo.jpg"> <h1 style="margin-left: 25px;"> Visual Logic </h1>
+      <a style="margin-left: 25px;" target="_blank" href = "https://github.com/Bram-Hub/VisualLogic">GitHub</a>
+      <a style="margin-left: 25px;" target="_blank" href="https://shailpatels.me/EG/index.html">Existential graphs</a>
+      <br>
+      <br>
+      <a style="margin-left: 25px;" href="VL_win_x86.zip" download>Windows x86</a>
+ </div>
+    <div class="webgl-content" style="top:400px">
       <div id="gameContainer" style="width: 960px; height: 600px"></div>
       <div class="footer">
-        <div class="webgl-logo"></div>
         <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
-        <div class="title">Visual Logic</div>
       </div>
     </div>
   </body>
