@@ -10,6 +10,7 @@ hr{
 a:link, a:visited{
 	color:inherit;
 }
+
 .flex_section{
     display: flex;
     justify-content: center;
@@ -80,6 +81,12 @@ a:hover{
 .demo_link:hover{
 	box-shadow : none;
 }
+
+.research{
+    box-shadow: 2px 2px 5px grey;
+    padding: 15px;
+}
+
 #name{
     background-color: #319e3d;
     color: white;
