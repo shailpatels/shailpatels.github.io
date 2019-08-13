@@ -11,6 +11,50 @@ a:link, a:visited{
 	color:inherit;
 }
 
+.home_container{
+    display: grid;
+    grid-template-columns: 10% 30% auto 30% 10%;
+    grid-template-rows: 115px 15px 1fr 1fr 1fr;
+
+    grid-template-areas: "left a center b right"
+                         "1 2 title 4 5"
+                         "1 post_center post_center post_center 5";
+}
+
+@media only screen and (max-width : 700px){
+    .home_container{
+        grid-template-columns: 100%;
+        grid-template-areas: "center"
+                             "content-center";
+    }
+}
+
+.nav_bar{
+    grid-area : center;
+    /*justify-self: center;*/
+    text-align: center;
+    max-width: 800px;
+    padding: 15px;
+    color : white;
+                      /* green */
+    background-color: #319e3d; 
+}
+
+.post{
+    grid-area: post_center;
+    align-self:center;
+    justify-self :center ;
+    max-width: 1000px;
+}
+
+.title{
+    grid-area : title;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/**/
+
 .flex_section{
     display: flex;
     justify-content: center;
