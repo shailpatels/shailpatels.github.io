@@ -20,101 +20,139 @@
 	<meta name="google-site-verification" content="dVfxj3ZbAYkbewLTaRAbsgedILDg7_Y38kKOPLNiNro" />
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131444245-1"></script>
 	<script>
-		// window.dataLayer = window.dataLayer || [];
-		// function gtag(){dataLayer.push(arguments);}
-		// gtag('js', new Date());
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
 
-		// gtag('config', 'UA-131444245-1');
+		gtag('config', 'UA-131444245-1');
 	</script>
 </head>
 
 <body>
-	<div class = "home_container">
-		<div class = "nav_bar">
-			<h1>Shail Patel</h1>
-			<p>Computer and Cognitive Science @ RPI</p>
-			<a class="header_link" href ="#contact">Contact</a>
-            <a class="header_link" href ="research.html">Research</a>
-		</div>
+	<div class = "background"style = "grid-row-start:1;grid-row-end:100;"></div>
+	<div class = "background"style = "grid-column-start:3;grid-row-start:1;grid-row-end:100;"></div>
+	<header id="header">
+	
+		<h1>Shail Patel</h1>
+		<p>Computer and Cognitive Science @ RPI</p>
+	
+		<a class="header_link" href ="#contact" >Contact</a>
+        <a class="header_link" href ="research.html" target="_none">Research</a>
+	</header>
+
+	<div id="pad"></div>
+
+	<h2 id="title1" class="center"  > Selected Projects </h2>
+	<hr/>
+	<div id="pad"></div>
+
+	<h2 id="subtitle1" class="center">The openBook Project</h2>
+	<br/>
+	<img class="center" src="images/openBook.jpg" alt="The OpenBook project logo" />
+	<p class="info">The openBook project is an alternative to traditional textbooks and ebooks 
+		by providing a markdown-like syntax to generate digital educational content.
+		Started as a HackRPI project, it won 15th place overall. 
+	</p>
+	<p class="info">
+		The project consists of two parts, the first is the interpreter written in Python which generates
+		HTML based on the openBook syntax. The second is the website which will be a place to upload 
+		collaborate on openBooks.
+	</p>
+
+	<a class="demo_link" href="https://github.com/openbook-project" >GitHub</a>
+
+	<div id="pad"></div>
+	<hr/>
+
+	<h2 class="center" id="subtitle2">Submitty</h2>
+	<img class="center" width="90%" src="images/submitty.jpg" alt="The Submitty logo"/>
+	<div id="pad"></div>
+
+	<p class="info">
+		Submitty is an open source programming assignment submission system from the Rensselaer Center for Open Source Software (RCOS), launched by the Department of Computer Science at Rensselaer Polytechnic Institute (RPI).
+	</p>
+
+	<div class="hlist">
+		<a style = "grid-column-start:2; justify-self:center;" class="demo_link" href="https://github.com/Submitty/Submitty" target="_none" >GitHub</a>
+		<a style = "grid-column-start:4;" class="demo_link" href="https://submitty.org/" target="_none">Submitty.org</a>
 	</div>
 
-	<h2 class="title" id="selected_projects"> Selected Projects </h2>
+	<div id="pad"></div>
+	<hr/>
+	<div id="pad"></div>
 
-	<div class = "post">
-		FSS
+	<img class="center"width="90%" src="images/vl.jpg" alt="Example of the Visual Logic interface" />
+
+	<p class="info">
+		Visual Logic is a tool to represent existential graphs, a visual notation for logic expressions developed by Charles Sanders Peirce. Built in Unity and C#. Currently supports propositional logic.
+	</p>
+
+	<div id="pad"></div>
+	<a class="demo_link" target = "_blank" href = "EG/index.html">What are Existential Graphs </a>
+	<div id="pad"></div>
+	<div class="hlist">
+		<a style = "grid-column-start:2;" class="demo_link" target = "_blank" href = "vl_web/index.html">Demo</a>
+		<a style = "grid-column-start:4;"class="demo_link" target = "_blank" href = "https://github.com/Bram-Hub/VisualLogic">GitHub</a>
+	</div>
+	<div id="pad"></div>
+	<hr/>
+	<div id="pad"></div>
+
+	 <img class="center" src="images/fsm.png" width="90%" alt="example of the finate state builder interface">
+                 
+		<p class="info">Finite State Machine builder is a tool to quickly prototype and display FSMs,
+		built with native JS and the HTML canvas</p>
+		<div class = "hlist">
+			<a style = "grid-column-start:2;" class="demo_link" target = "_blank" href = "FSS/index.html"">Demo</a>
+		<a style = "grid-column-start:4;"class="demo_link" target = "_blank" href="https://github.com/shailpatels/FSS">GitHub</a>
+
+		</div>
+
+	<div id="pad"></div>
+	<hr/>
+	<div id="pad"></div>
+
+	<img src = "images/WW_preview.jpg" width = "400px" class="center", alt="The leggo robot, his name is saggy boi (he was better programmed than built)">	
+		<p class="info">
+		Wumpus world is a programming challenge involving an agent attempting to make logical inferences about its environment  
+		<br/>I developed the algorithm and programmed the robot, I also made a simulation for testing purposes.
+		</p>
+		<a class="demo_link" target = "_blank" href="wumpusWorld/wumpus.html">
+			Demo and Simulation </a>
 	</div>
 
-	<!-- <div id = "social">
-		<a href="https://www.linkedin.com/in/shailpatels/" target="_blank"><i class = "fab fa-linkedin fa-2x"></i></a>
-		<a href="https://www.instagram.com/shailpatels/" target="_blank"><i class = "fab fa-instagram fa-2x"></i></a>
-		<a href="https://twitter.com/shailpatels" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+	<h2 class="center" style="margin:15px;">Contact</h2>	
+	<hr/>
+	<h3 class="center">GitHub, Resume, Email</h3>
+	<div id="pad"></div>
+	<div id="contact" class="center">
+		<a href = "https://github.com/shailpatels" target = "_blank" aria-label="GitHub profile">
+			<i class="fab fa-5x  fa-github-square"></i></a>
+		<a href = "documents/resume.pdf" target = "_blank" aria-label="My Resume">
+			<i  class="fas fa-file fa-5x"></i></a>
+		<a href = "mailto:shailpatel67@gmail.com" aria-label="Email me at shailpatel67@gmail.com">
+			<i class = "fas fa-envelope fa-5x"></i></a>
 	</div>
-     <section class="flex_section" id="content">
-          <h2 style="margin:15px;">Selected Projects</h2>
-          <div class="background_img flex_section" style="background-image: url('images/FSS_background.JPG');">
-               <div class="project">
-                    <img src="images/FSS_preview.JPG" width="400px" height="200px">
-                    <div class="right">
-                         <p style="margin:15px;">Finite State Machine builder is a tool to quickly prototype and display FSMs,
-                         built with native JS and the HTML canvas</p>
-                         <div class = "h_list">
-			 			 	<a class="h_item" style="text-decoration: none;"target = "_blank" href="FSS/index.html"><div class = "demo_link" >Demo </div> </a>
-			 			 	<a class = "h_item" style="text-decoration: none;"target = "_blank" href="https://github.com/shailpatels/FSS"><div class = "demo_link" >GitHub </div> </a>
-			 			</div>
-                    </div>
-               </div>
-          </div>
-	  <div class="background_img flex_section" style = "background-image: url(images/VL_background.JPG); background-position : center; background-size : cover;">
-		<div class = "project">
-			<img src = "images/VL_preview.JPG" width = "400px" height="200px">
-			<div class = "right">
-				<p style="margin : 15px;">Visual Logic is a graphical way of displaying formal graphs using Existential graphs. Built with Unity.
-				</p>
-				<div class="h_list">
-					<a class="h_item"style="text-decoration: none;" target = "_blank" href = "vl_web/index.html"><div class = "demo_link">Demo</div> </a>
-					<a class="h_item"style="text-decoration: none;" target = "_blank" href = "https://github.com/Bram-Hub/VisualLogic"><div class = "demo_link">GitHub</div> </a>
-					<a class="h_item"style="text-decoration: none;" target = "_blank" href = "EG/index.html"><div class = "demo_link">Existential Graphs</div> </a>
-				</div>
-			</div>
-		</div>
-	  </div>
-	  <div class = "background_img flex_section" style = "background-image : url('images/SUB_background.JPG');">
-		<div class = "project">
-			<img src = "images/SUB_preview.JPG" width = "400px" height="200px">
-			<div class = "right">
-				<p style="margin : 15px;">
-				I work on the <a href = "https://submitty.org/" style = "color : blue ">Submitty</a> Team <br/> 
-				Submitty is an open source programming assignment submission system from the Rensselaer Center for Open Source Software (RCOS), 
-				launched by the Department of Computer Science at Rensselaer Polytechnic Institute.
-				</p>
-				<a class="h_item"style="text-decoration: none;" target = "_blank" href = "https://github.com/Submitty/Submitty"><div class = "demo_link">GitHub</div> </a>
-			</div>
-		</div>
+
+	<div id="pad"></div>
+	<h3 class="center">Social</h3>
+	<div id="pad"></div>
+	<div class="center" id = "social">
+		<a href="https://www.linkedin.com/in/shailpatels/" target="_blank"  aria-label="LinkedIn profile">
+			<i class = "fab fa-linkedin fa-3x"></i>
+		</a>
+		<a href="https://www.instagram.com/shailpatels/" target="_blank" aria-label="Instagram profile">
+			<i class = "fab fa-instagram fa-3x"></i></a>
+		<a href="https://twitter.com/shailpatels" target="_blank" aria-label="Twitter profile">
+			<i class="fab fa-twitter fa-3x"></i></a>
 	</div>
-	<div class = "background_img flex_section" style = "background-image : url('images/WW_background.JPG'); background-size : contain;">
-		<div class = "project">
-			<img src = "images/WW_preview.jpg" width = "400px" height="250px">	
-			<div class = "right">	
-				<p style="margin : 15px;">
-				Wumpus world is a programming challenge involving an agent attempting to make logical inferences about its environment  
-				<br/>I developed the algorithm and programmed the robot, I also made a simulation for testing purposes.
-				</p>
-				<a style="text-decoration: none;" target = "_blank" href="wumpusWorld/wumpus.html">
-					<div class = "demo_link">Demo and Simulation</div> </a>
-			</div>
-		</div>
-	</div>
-     </section>
-     <section style="display:flex; flex-direction:column;align-items:center;justify-content:center;" id="contact">
-	<h2 style="margin:15px;">Contact</h2>	
-	<div class = "h_list">
-		<a href = "https://github.com/shailpatels" target = "_blank"><i style="padding: 25px;" class="fab fa-5x  fa-github-square"></i></a>	
-		<a href = "documents/resume.pdf" target = "_blank"><i style="padding: 25px;" class="fas fa-file fa-5x"></i></a>
-		<a href = "mailto:shailpatel67@gmail.com"><i style="padding: 25px;" class = "fas fa-envelope fa-5x"></i></a>
-	</div>
-	</section>
+
+	<div id="pad"></div>
+	<hr/>
+	<div id="pad"></div>
+
 	<section id="footer">
-		<p style="color:white; padding:10px;"> &copy; 2019 Shail Patel </p>
-	</section> -->
+		<p style="margin-bottom: 20px"> &copy; 2019 Shail Patel </p>
+	</section> 
 </body>
 </html>
