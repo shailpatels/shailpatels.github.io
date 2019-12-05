@@ -1,0 +1,226 @@
+
+#title# Athena Guide
+#break#
+
+#par# 
+	Athena is a programming language and theorem prover 
+	developed by Konstantine Arkoudas. Athena allows for 
+	the development of proofs that are both human readable
+	and machine-checkable.
+#end#
+
+#subtitle | center # Introduction #end# 
+
+#par# 
+	Formal proof methods are typically used in the area of
+	software verification in computer science. The central
+	focus is program correctness which aims to validate 
+	the behavior of a program. Key properties such as 
+	type checking, verifying inputs and outputs, and proof
+	of termination are all areas which can be formally checked
+	for correctness.
+#end#
+
+#subtitle | center# Installation & Setup
+
+#par#
+	Athena downloads can be found here:
+	#link | center # http://proofcentral.org/athena/1.4/ #end#
+#end#
+
+#par#
+	Once downloaded extract and execute the 'athena' binary after installation.
+	This will start the Athena interactive shell, you enter quit or CTRL + C to
+	exit.
+#end#	
+
+#par#	
+	You can create an environment variable called 'ATHENA_HOME' that points to
+	where you installed Athena to run the program in any location.
+#end#
+#par#
+	On Linux: you can edit your bashrc, open ~/.bashrc with your favorite 
+	text editor and enter this line.
+#end#
+
+#code#
+	export ATHENA_HOME=~/Athena/athena-linux
+#end#
+
+#par#
+	Replace the path after 'ATHENA_HOME=' with where you installed Athena to.
+	Now add an alias in your bashrc
+#end#
+	
+#code#
+	alias Athena='$ATHENA_HOME/athena'
+#end#
+
+#par#
+	Remember to reload your bashrc by entering 'source ~/.bashrc'.
+	After that you should be able to type 'Athena' and enter the shell
+	just like before.
+#end#
+
+#big# Loading Files #end#
+
+#par#
+You can also write Athena programs inside of a .ath file and load them into a
+shell. This can be done with the command:
+#end#
+
+#code#
+	load "example.ath";;
+#end#
+
+#par# 
+The command "clear-assumption-base" will
+remove any theorems and values typed or loaded 
+from files.
+#end#
+
+
+#break#
+
+#title# Propositional Logic 
+
+#par#
+	Boolean logic (e.g 0th order or propositional logic) is considered a 
+	primitive in Athena and many other proof
+	methods are built on top of propositional logic. Athena can be used a 
+	proof language where propositional and higher order logic systems can 
+	be expressed and verified for correctness.  
+#end# 
+
+#subtitle | center#Common Rules#end#
+
+
+#tex#
+ $$
+ 	\begin{align}
+ 	&\frac{A, B}{\therefore A \land B} && \text{Conjunction Introduction} \\~\\
+
+ 	&\frac{A \land B}{\therefore A, B} && \text{Conjunction Elimination}\\~\\
+
+ 	&\frac{A}{\therefore A \lor B} && \text{Disjunction Intro}\\~\\
+
+ 	&\frac{A \rightarrow C, B \rightarrow C, A \lor B }{ \therefore C } && \text{Disjunction Elimination}\\~\\
+
+ 	&\frac{\lnot \lnot A}{\therefore A} && \text{Double Negation}\\~\\
+
+ 	&\frac{A \rightarrow B, A}{\therefore B} && \text{Modus Ponens}\\~\\
+
+ 	&\frac{A \rightarrow B, \lnot B}{\therefore \lnot A}
+ 	&&\text{Modus Tollens}
+
+ 	\end{align}
+ $$
+#end#
+
+#end#
+
+#break#
+
+#list#
+	#item# Conjunction Introduction : If two boolean atoms are asserted, then they can be conjuncted together. 
+	#item# Conjunction Elimination : If two booleans are 
+	conjuncted together, it implies both of them are asserted.
+	#item# Disjunction intro, if one atom is asserted you can 
+	introduce any number of atoms disjuncted onto it. 
+	E.g. If A represents the statement: "It is sunny outside",
+	A or B can represent "It is sunny outside or it is raining dogs". This statement is technically true even though it 
+	provides no additional information.
+	#item# Disjunction elim: If all cases lead to the same 
+	conclusion then the disjunction can be eliminated. 
+	#item# Double negation : E.g. Not Not A can be reduced 
+	to A since the negations cancel. 
+	#item# Modus Ponens: If A then B, given A we also have B.
+	#item# Modus Tollens: If A then B, given not B we also have not A.
+#end#
+
+#par# 
+	These common rules map directly to Athena:
+	Boolean is a primitive type already defined
+	in the Athena's assumption base by default.
+#end#
+
+#subtitle | center# Athena Examples
+
+#code#
+clear-assumption-base
+declare A,B,C,D,E:Boolean
+
+\#propositional logic using Athena
+\#conjunction intro
+assume A
+assume B
+	(!both A B)	
+\#A ==> (B ==> (A & B))
+
+\#conjunction elim
+assume ab := (A & B)
+	let {a := (!left-and ab);
+		 b :=(!right-and ab)
+		}
+	(!claim b)
+	\#(!claim a)
+
+\#(A & B) ==> A
+\#(A & B) ==> B
+
+\#disjunction intro
+
+assume A
+	(!claim (!left-either A B))
+
+\#A ==> (A | B)
+
+\#disjunction elim
+assume ( (A ==> C) & (B ==> C) & (A | B) )
+	(!cases (A | B) 
+			(A ==> C)
+			(B ==> C))
+
+\#(A ==> C & B ==> C & A | B) ==> C
+
+\#double elim
+
+assume nna := (~~A)
+	(!claim (!dn nna))
+
+\# ~~A ==> A
+
+\#modus ponens
+assume hyp := ((C ==> D) & C)
+	let{
+		cond := (!left-and hyp);
+		c := (!right-and hyp)
+	}
+	(!claim (!mp cond c ) )
+
+\#((C ==> D) & C) ==> D
+
+\#modus tollens
+assume hyp := ((C ==> D) & (~ D) )
+	let{
+		cond := (!left-and hyp);
+		nd := (!right-and hyp)
+	}
+	(!claim (!mt cond nd) )
+
+\#((C ==> D) & (~D)) ==> (~C)
+#end#
+
+#par#
+Most Athena methods map to traditional methods
+as you would expect. Certain functions used like
+"let" allow multiple steps to be taken within the 
+same context to preserve variables.
+The "!claim" function asserts if a variable is in
+the current context or not. The "assume" keyword
+is used to introduce new variables in the form
+of an assumption, notice all the theorems that
+start with "assume" create a conditional which
+maps to the natural language representation, "if A then ..."
+#end#
+
