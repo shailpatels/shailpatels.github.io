@@ -200,6 +200,259 @@ of an assumption, notice all the theorems that
 start with "assume" create a conditional which
 maps to the natural language representation, "if A then ..."
 </p>
+<p style="">	Here is an example of a hypothetical syllogism
+	using the above rules.
+</p>
+<pre class = "prettyprint">
+	clear-assumption-base
+declare A,B,C,D,E:Boolean
+
+#hyp syl
+define premise := ( (A ==> B) & (B ==> C) )
+assume A
+assume premise
+	let{ left := (!left-and premise);
+		 right := (!right-and premise);
+		 b := (!mp left  A)
+		}
+	(!claim  (!mp right b))
+</pre>
+<p style="">	Hypothetical syllogism is a common method in logic, instead of 
+defining a single theorem we could create a method we could
+reuse. Similar to predefined methods like "(!mp)".
+</p>
+<pre class = "prettyprint">
+	define (hs p1 p2) :=
+	match [p1 p2] {
+		[(a ==> b) (b ==> c)] =>
+		assume a
+		conclude c
+			(!mp p2 conclude b
+					(!mp p1 a))
+	}
+</pre>
+<p style="">	The match keyword takes sentences and compares them with 
+	predefined expected sentences, this prevents incorrect 
+	inputs to be used with this function. 
+
+	We can then use this function just like any other:
+</p>
+<pre class = "prettyprint">
+	assert t := (A ==> B)
+	assert s := (B ==> C)
+	(!hs t s)
+	#A ==> C
+</pre>
+<p style="">	Notice the resulting theorem is much cleaner and closer to what we 
+	would expect compared to the first method.
+</p>
+<div style = "max-width:100vw;">	$$
+		\frac{ (A \rightarrow B) \land (B \rightarrow C) }{ \therefore A \rightarrow C }
+	$$
+</div>
+<hr/ style = "justify-self:center;">	
+<h1 id="title3" style="justify-self : center;">	First Order Logic
+</h1>
+<p style="">	First order Logic (FOL) introduces quantifiers that allow
+reasoning over sets of objects. This is done by introducing
+predicate that accept an atom. 
+
+Sets and objects can be defined in Athena like:
+</p>
+<pre class = "prettyprint">
+	declare S : [Object] -> Boolean
+ 	declare a : Object
+
+ 	define [x y z] := [?x ?y ?z]
+</pre>
+<p style="">	
+</p>
+<i style="">	The definition of x y z is there to prevent us from having to write ?x everywhere.
+</i>
+<p style="">	Quantifiers in First order logic allow us to express more, for example 
+	boolean atoms are analogous to constants in FOL. In natural language
+	words can quantify over a noun, for example "every student", "exactly 3",
+	"no person", etc. All these phrases express information over an entire set
+	of objects. There are two types of quantifiers, forall: ∀, and exists: ∃.
+	Forall is usually indicated by statements like "every", "all", "anything".
+	Exists is usually indicated by "something", "at least one thing", "there exists" .
+</p>
+<p style="">	We can now express statements like : All students are smart or someone is in class.
+</p>
+<div style = "max-width:100vw;">	$$
+		\forall x \, Student(x) \rightarrow Smart(x)\\~\\
+		\exists x \, InClass(x)
+	$$
+</div>
+<h2 id = "subtitle5" style="justify-self : center;">	Athena Examples
+</h2>
+<pre class = "prettyprint">
+	declare Student : [Object] -> Boolean
+	declare Smart : [Object] -> Boolean
+	declare InClass : [Object] -> Boolean
+
+	(forall x . Student x ==> Smart x )
+	(exists x . InClass x)
+</pre>
+<p style="">	We can draw a conclusion from a FOL sentence by the process 
+	of universal specification or universal
+	instantiation. This is done by the method "uspec"
+	which takes a FOL sentence in the assumption base and the 
+	second is the term to specialize onto the sentence.
+</p>
+<pre class = "prettyprint">
+	assert t := (forall x . Smart x)
+	declare a : Object
+	(!uspec t a)
+
+	# Theorem: (Smart a)
+</pre>
+<p style="">	Introducing universal quantifiers. The "(!reflex x)" 
+	function will produce the equality x = x. We can 
+	universally quantify this function to create the sentence
+	"for every x, x is equal to itself" which is a true statement
+	in FOL as "forall x . x = x"
+</p>
+<pre class = "prettyprint">
+	pick-any p (!reflex )
+
+	#Theorem: (forall ?p:'S
+	#		(= ?x:'T ?x:'T))
+</pre>
+<p style="">	The function uspec can be paired with this sentence for any 
+	atom
+</p>
+<pre class = "prettyprint">
+	define self := pick-any x (!reflex x)
+
+	(!uspec self true)
+	(!uspec self z)
+	(!uspec self (y > x) )
+</pre>
+<p style="">	A similar function exists for working with existential quantifiers,
+	the function egen handles existential generalization, which is the 
+	reasoning that if some predicate applied to an atom is in the 
+	assumption base then we can generalize there exists that predicate.
+	This can be expressed as:
+</p>
+<div style = "max-width:100vw;">	$$
+	P(a) \rightarrow \exists x \, P(x)
+	$$
+</div>
+<p style="justify-self : center;">	This example shows that a universally quantified predicate implies an existential.
+</p>
+<div style = "max-width:100vw;">	$$
+	\forall x \, Smart(x) \rightarrow \exists x \, Smart(x)
+	$$
+</div>
+<p style="justify-self : center;">	It should be intuitive that if all things are smart, there exists at least one
+	thing that is smart
+</p>
+<pre class = "prettyprint">
+	declare a : Object
+	define goal := (exists x . Smart x)
+
+	assume allSmart := (forall x . Smart x)
+		conclude goal
+		let {smartA := (!uspec allSmart a) }
+		(!claim (!egen goal a ))
+</pre>
+<h1 id="title4" style = "justify-self : center;;">	Numeric Expressions in Athena
+</h1>
+<p style="">	One way to define natural numbers is through the Peano Axioms,
+	which uses First Order Logic.
+
+	The syntax required are 0 and the successor function S(x).
+	The successor function returns the next value in the sequence.
+</p>
+<p style="">	Peano Numbers:
+</p>
+<ul>
+	<li>0</li>
+	<li>S(0)</li>
+	<li>S(S(0))</li>
+	<li>S(S(S(0)))</li>
+	<li>...</li>
+</ul>
+<p style="">	Peano Axioms:
+</p>
+<div style = "max-width:100vw;">	$$
+		\begin{align}
+		&\forall x \, 0 \neq S(x) \\ & \text{0 is the first number}\\~\\
+		&\forall x, \forall y \, \, S(x) = S(y) \rightarrow x = y \\& \text{If the successor of x and y are equal, x and y must be equal  } \\~\\
+		&\forall x \, x + 0 = x \\ &  \text{0 plus anything is itself}\\~\\
+		&\forall x, \forall y \, \, x + S(y) = S(x + y) \\& \text{ x plus the successor of y is the successor of x and y  }\\~\\
+		&\forall x, x \cdot 0 = 0\\ & \text{0 times anything is 0}\\~\\
+		&\forall x, \forall y \,\, x \cdot S(y) = x \cdot y + x\\
+		&\text{x times the successor of y is x times y plus x, (the distributive law)}
+		\end{align}
+	$$
+</div>
+<p style="">	In order to introduce natural numbers a new datatype in Athena needs to be introduced.
+	A datatype is something that defines a type, an example is the Boolean which comes 
+	predefined:
+</p>
+<pre class = "prettyprint">
+	datatype Boolean := true | false
+
+	domain Boolean
+	declare true , false : Boolean
+	assert ( true =/= false )
+	assert ( forall ? b: Boolean . ?b = true | ?b = false )
+</pre>
+<p style="">	We can define a module to encapsulate the concept of a natural number. 
+A module in Athena allows code to be separated for reuse in other places.
+All definitions and assertions are contained within the scope of the module
+</p>
+<pre class = "prettyprint">
+	datatype N := zero | (S N) # S is the Successor function
+
+	module N{
+		declare one : N
+		declare + : [N N] -> N
+		declare * : [N N] -> N
+
+		define [n m] := [?n:N ?m:N]
+		assert one-def := (one = S zero)
+
+
+		assert Sn_not_zero  := (forall n . S n =/= zero )
+		assert Sn_equals    := (forall n m . (S n = S m) ==> (n = m)  )
+		assert n_plus_zero  := (forall n . n + zero = n ) 
+		assert Sn_plus_m    := (forall n m . n + S m = S (n + m)  )
+		assert n_times_0    := (forall n . n * zero = zero)
+		assert Sn_times_m   := (forall n m . n * S m = (n * m) + n  )
+	}
+</pre>
+<p style="">	Notice that the assumption base does need to be cleared sense 
+	everything is self contained in the module and only gets loaded
+	with the "open" command.
+    A module allows predefined theorem to be created for reuse, 
+    in the above example they are asserted to be true but proving them
+    allows the use of Peono Axioms in other work without having to 
+    redefine them.
+</p>
+<p style="">	Here is a simple example usage of the module. If the 
+    theorem n_plus_zero was fully proven the following 
+    theorem would be a robust theorem without having to reprove 
+    the underlying theorems.
+</p>
+<pre class = "prettyprint">
+	define goal := ( zero + zero = zero )
+    conclude goal
+        (!uspec n_plus_zero zero)
+</pre>
+<p style="">	This simple numeric module can be
+    expanded to handle more theorems that can be used in more 
+    complex proofs. In the future writing a proof could be as simple
+    as importing a library just like in a programming language to write
+    a more complex proof.
+</p>
+<h2 id = "subtitle6" style="justify-self : center;">	Implication Chaining
+</h2>
+<p style="">	Implication chaining allows connecting some starting term with
+    a target term through n nonzero steps.
+</p>
 <div class="navButton" id="showLeft" onclick="toggleNavBar()">	
 	<div class="bar" style = "margin-top:22px;">	
 </div>
@@ -222,5 +475,17 @@ maps to the natural language representation, "if A then ..."
 <a href = "#subtitle3">	Common Rules
 </a>
 <a href = "#subtitle4">	Athena Examples
+</a>
+</div>
+<a href = "#title3" class = dropdown-btn>	First Order Logic
+</a>
+<div class="dropdown-container" id="6">	
+<a href = "#subtitle5">	Athena Examples
+</a>
+</div>
+<a href = "#title4" class = dropdown-btn>	Numeric Expressions in Athena
+</a>
+<div class="dropdown-container" id="8">	
+<a href = "#subtitle6">	Implication Chaining
 </a>
 </nav>

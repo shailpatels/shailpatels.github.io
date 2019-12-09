@@ -224,3 +224,329 @@ start with "assume" create a conditional which
 maps to the natural language representation, "if A then ..."
 #end#
 
+#par#
+	Here is an example of a hypothetical syllogism
+	using the above rules.
+#end#
+
+#code#
+	
+clear-assumption-base
+declare A,B,C,D,E:Boolean
+
+\#hyp syl
+define premise := ( (A ==> B) & (B ==> C) )
+assume A
+assume premise
+	let{ left := (!left-and premise);
+		 right := (!right-and premise);
+		 b := (!mp left  A)
+		}
+	(!claim  (!mp right b))
+
+#end#
+
+#par#
+Hypothetical syllogism is a common method in logic, instead of 
+defining a single theorem we could create a method we could
+reuse. Similar to predefined methods like "(!mp)".
+
+#end#
+
+#code#
+	define (hs p1 p2) :=
+	match [p1 p2] {
+		[(a ==> b) (b ==> c)] =>
+		assume a
+		conclude c
+			(!mp p2 conclude b
+					(!mp p1 a))
+	}
+#end#
+
+#par#
+	The match keyword takes sentences and compares them with 
+	predefined expected sentences, this prevents incorrect 
+	inputs to be used with this function. 
+
+	We can then use this function just like any other:
+#end#
+
+#code#
+	assert t := (A ==> B)
+	assert s := (B ==> C)
+	(!hs t s)
+	\#A ==> C
+#end#
+
+#par#
+	Notice the resulting theorem is much cleaner and closer to what we 
+	would expect compared to the first method. 
+#end#
+
+#tex#
+	$$
+		\frac{ (A \rightarrow B) \land (B \rightarrow C) }{ \therefore A \rightarrow C }
+	$$
+#end#
+
+#break#
+
+#title | center# First Order Logic
+
+#par#
+First order Logic (FOL) introduces quantifiers that allow
+reasoning over sets of objects. This is done by introducing
+predicate that accept an atom. 
+
+Sets and objects can be defined in Athena like:
+#code#
+ declare S : [Object] -> Boolean
+ 	declare a : Object
+
+ 	define [x y z] := [?x ?y ?z]
+#end#
+
+#par# 
+#emph#
+The definition of x y z is there to prevent us from having to write ?x everywhere. 
+#end#
+#end#
+
+#par#
+	Quantifiers in First order logic allow us to express more, for example 
+	boolean atoms are analogous to constants in FOL. In natural language
+	words can quantify over a noun, for example "every student", "exactly 3",
+	"no person", etc. All these phrases express information over an entire set
+	of objects. There are two types of quantifiers, forall: ∀, and exists: ∃.
+	Forall is usually indicated by statements like "every", "all", "anything".
+	Exists is usually indicated by "something", "at least one thing", "there exists" .
+#end#
+
+#par#
+	We can now express statements like : All students are smart or someone is in class.
+#end#
+
+#tex#
+	$$
+		\forall x \, Student(x) \rightarrow Smart(x)\\~\\
+		\exists x \, InClass(x)
+	$$
+#end#
+
+#subtitle | center# Athena Examples
+
+#code#
+	declare Student : [Object] -> Boolean
+	declare Smart : [Object] -> Boolean
+	declare InClass : [Object] -> Boolean
+
+	(forall x . Student x ==> Smart x )
+	(exists x . InClass x) 
+#end#
+
+#par#
+	We can draw a conclusion from a FOL sentence by the process 
+	of universal specification or universal
+	instantiation. This is done by the method "uspec"
+	which takes a FOL sentence in the assumption base and the 
+	second is the term to specialize onto the sentence.
+#end#
+
+#code#
+	assert t := (forall x . Smart x)
+	declare a : Object
+	(!uspec t a)
+
+	\# Theorem: (Smart a)
+#end#
+
+#par# 
+	Introducing universal quantifiers. The "(!reflex x)" 
+	function will produce the equality x = x. We can 
+	universally quantify this function to create the sentence
+	"for every x, x is equal to itself" which is a true statement
+	in FOL as "forall x . x = x"
+#end#
+
+#code#
+	pick-any p (!reflex )
+
+	\#Theorem: (forall ?p:'S
+	\#		(= ?x:'T ?x:'T))
+#end#
+
+#par# 
+	The function uspec can be paired with this sentence for any 
+	atom
+#end#
+
+#code#
+	define self := pick-any x (!reflex x)
+
+	(!uspec self true)
+	(!uspec self z)
+	(!uspec self (y > x) )
+#end#
+
+#par#
+	A similar function exists for working with existential quantifiers,
+	the function egen handles existential generalization, which is the 
+	reasoning that if some predicate applied to an atom is in the 
+	assumption base then we can generalize there exists that predicate.
+	This can be expressed as:
+#end#
+
+#tex#
+	$$
+	P(a) \rightarrow \exists x \, P(x)
+	$$
+#end#
+
+#par | center#
+	This example shows that a universally quantified predicate implies an existential.
+#end#
+
+#tex#
+	$$
+	\forall x \, Smart(x) \rightarrow \exists x \, Smart(x)
+	$$
+#end#
+
+#par | center#
+	It should be intuitive that if all things are smart, there exists at least one
+	thing that is smart
+#end#
+
+#code#
+	declare a : Object
+	define goal := (exists x . Smart x)
+
+	assume allSmart := (forall x . Smart x)
+		conclude goal
+		let {smartA := (!uspec allSmart a) }
+		(!claim (!egen goal a ))
+#end#
+
+#title# Numeric Expressions in Athena
+
+#par# 
+	One way to define natural numbers is through the Peano Axioms,
+	which uses First Order Logic.
+
+	The syntax required are 0 and the successor function S(x).
+	The successor function returns the next value in the sequence.
+#end#
+#par# 
+	Peano Numbers:
+#end#
+	
+#list#
+	#item# 0			
+	#item# S(0)
+	#item# S(S(0))
+	#item# S(S(S(0)))
+	#item# ...
+#end#
+
+
+#par#
+Peano Axioms:
+#end#
+
+#tex#
+	$$
+		\begin{align}
+		&\forall x \, 0 \neq S(x) \\ & \text{0 is the first number}\\~\\
+		&\forall x, \forall y \, \, S(x) = S(y) \rightarrow x = y \\& \text{If the successor of x and y are equal, x and y must be equal  } \\~\\
+		&\forall x \, x + 0 = x \\ &  \text{0 plus anything is itself}\\~\\
+		&\forall x, \forall y \, \, x + S(y) = S(x + y) \\& \text{ x plus the successor of y is the successor of x and y  }\\~\\
+		&\forall x, x \cdot 0 = 0\\ & \text{0 times anything is 0}\\~\\
+		&\forall x, \forall y \,\, x \cdot S(y) = x \cdot y + x\\
+		&\text{x times the successor of y is x times y plus x, (the distributive law)}
+		\end{align}
+	$$
+#end#
+
+#par#
+	In order to introduce natural numbers a new datatype in Athena needs to be introduced.
+	A datatype is something that defines a type, an example is the Boolean which comes 
+	predefined:
+#end#
+
+#code#
+	datatype Boolean := true | false
+
+	domain Boolean
+	declare true , false : Boolean
+	assert ( true =/= false )
+	assert ( forall ? b: Boolean . ?b = true | ?b = false )
+#end#
+
+#par#
+We can define a module to encapsulate the concept of a natural number. 
+A module in Athena allows code to be separated for reuse in other places.
+All definitions and assertions are contained within the scope of the module
+
+#end#
+
+#code#
+datatype N := zero | (S N) \# S is the Successor function
+
+	module N{
+		declare one : N
+		declare + : [N N] -> N
+		declare * : [N N] -> N
+
+		define [n m] := [?n:N ?m:N]
+		assert one-def := (one = S zero)
+
+
+		assert Sn_not_zero  := (forall n . S n =/= zero )
+		assert Sn_equals    := (forall n m . (S n = S m) ==> (n = m)  )
+		assert n_plus_zero  := (forall n . n + zero = n ) 
+		assert Sn_plus_m    := (forall n m . n + S m = S (n + m)  )
+		assert n_times_0    := (forall n . n * zero = zero)
+		assert Sn_times_m   := (forall n m . n * S m = (n * m) + n  )
+	}
+#end#
+
+#par#
+	Notice that the assumption base does need to be cleared sense 
+	everything is self contained in the module and only gets loaded
+	with the "open" command.
+    A module allows predefined theorem to be created for reuse, 
+    in the above example they are asserted to be true but proving them
+    allows the use of Peono Axioms in other work without having to 
+    redefine them.  
+#end#
+
+#par#
+    Here is a simple example usage of the module. If the 
+    theorem n_plus_zero was fully proven the following 
+    theorem would be a robust theorem without having to reprove 
+    the underlying theorems.
+#end#
+
+#code#
+define goal := ( zero + zero = zero )
+    conclude goal
+        (!uspec n_plus_zero zero)
+
+#end#
+
+#par#
+    This simple numeric module can be
+    expanded to handle more theorems that can be used in more 
+    complex proofs. In the future writing a proof could be as simple
+    as importing a library just like in a programming language to write
+    a more complex proof. 
+#end#
+
+#subtitle | center# Implication Chaining
+
+#par#
+    Implication chaining allows connecting some starting term with
+    a target term through n nonzero steps.
+#end#
+
