@@ -480,6 +480,21 @@ All definitions and assertions are contained within the scope of the module
 	(!chain [ (~~ A & (B ==> C)) <==> ((B ==> C) & ~~ A [comm]
 				     <==> ((~C ==> ~B) & A  [contra-po bdn])) ])
 </pre>
+<p style="justify-self : center;">	The overall pattern of implication chaining can be represented as the
+	following:
+</p>
+<div style = "max-width:100vw;">	$$
+		\begin{align}
+		\text{chain} \,\,\, t_1 &= t_2 & J_1 \\
+					 	 &= t_3 & J_2\\
+					 	 &.\\
+					 	 &= t_{n+1} & J_n
+		\end{align}
+	$$
+</div>
+<p style="">	Where J are the justifications for every step and t are the different
+	terms that lead to the final term.
+</p>
 <div class="navButton" id="showLeft" onclick="toggleNavBar()">	
 	<div class="bar" style = "margin-top:22px;">	
 </div>

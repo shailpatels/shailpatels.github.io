@@ -585,5 +585,26 @@ define goal := ( zero + zero = zero )
 				     <==> ((~C ==> ~B) & A  [contra-po bdn])) ])
 #end#
 
+#par | center#
+	The overall pattern of implication chaining can be represented as the
+	following:
+#end#
+
+#tex#
+	$$
+		\begin{align}
+		\text{chain} \,\,\, t_1 &= t_2 & J_1 \\
+					 	 &= t_3 & J_2\\
+					 	 &.\\
+					 	 &= t_{n+1} & J_n
+		\end{align}
+	$$
+#end#
+
+#par#
+	Where J are the justifications for every step and t are the different
+	terms that lead to the final term.
+#end#
+
 
 
