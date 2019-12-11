@@ -543,10 +543,47 @@ define goal := ( zero + zero = zero )
     a more complex proof. 
 #end#
 
-#subtitle | center# Implication Chaining
+#title | center# Implication Chaining
 
 #par#
     Implication chaining allows connecting some starting term with
-    a target term through n nonzero steps.
+    a target term through n nonzero steps. Each step is justified 
+    by some rule. Here is an example of using implication chaining
+    in propositional logic.
 #end#
+
+#code#
+	declare A,B:Boolean
+	(!chain [(A & B) ==> left-and])	
+#end#
+
+#par#
+	Although this could be accomplished by the traditional function 
+	application of "left-and" this method is closer to a traditional
+	proof approach where a starting premise goes through multiple
+	steps towards a goal. This could be represented as:
+#end#
+
+#tex#
+	$$
+		\begin{align}
+			A &\land B && \text{ And elimination }\\
+			A & \\
+			\therefore \, & \, (A \land B) \rightarrow A
+		\end{align}
+	$$
+#end#
+
+#par#
+	Implication chaining can be done in reverse with the "<==" operation 
+	or bidirectionally with "<==>". These steps can be used if at every
+	step the correct direction can be derived for example:
+#end#
+
+#code#
+		(!chain [ (~~ A & (B ==> C)) <==> ((B ==> C) & ~~ A [comm]
+				     <==> ((~C ==> ~B) & A  [contra-po bdn])) ])
+#end#
+
+
 

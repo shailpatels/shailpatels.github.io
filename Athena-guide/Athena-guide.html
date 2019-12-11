@@ -448,11 +448,38 @@ All definitions and assertions are contained within the scope of the module
     as importing a library just like in a programming language to write
     a more complex proof.
 </p>
-<h2 id = "subtitle6" style="justify-self : center;">	Implication Chaining
-</h2>
+<h1 id="title5" style="justify-self : center;">	Implication Chaining
+</h1>
 <p style="">	Implication chaining allows connecting some starting term with
-    a target term through n nonzero steps.
+    a target term through n nonzero steps. Each step is justified 
+    by some rule. Here is an example of using implication chaining
+    in propositional logic.
 </p>
+<pre class = "prettyprint">
+	declare A,B:Boolean
+	(!chain [(A & B) ==> left-and])
+</pre>
+<p style="">	Although this could be accomplished by the traditional function 
+	application of "left-and" this method is closer to a traditional
+	proof approach where a starting premise goes through multiple
+	steps towards a goal. This could be represented as:
+</p>
+<div style = "max-width:100vw;">	$$
+		\begin{align}
+			A &\land B && \text{ And elimination }\\
+			A & \\
+			\therefore \, & \, (A \land B) \rightarrow A
+		\end{align}
+	$$
+</div>
+<p style="">	Implication chaining can be done in reverse with the "<==" operation 
+	or bidirectionally with "<==>". These steps can be used if at every
+	step the correct direction can be derived for example:
+</p>
+<pre class = "prettyprint">
+	(!chain [ (~~ A & (B ==> C)) <==> ((B ==> C) & ~~ A [comm]
+				     <==> ((~C ==> ~B) & A  [contra-po bdn])) ])
+</pre>
 <div class="navButton" id="showLeft" onclick="toggleNavBar()">	
 	<div class="bar" style = "margin-top:22px;">	
 </div>
@@ -486,6 +513,8 @@ All definitions and assertions are contained within the scope of the module
 <a href = "#title4" class = dropdown-btn>	Numeric Expressions in Athena
 </a>
 <div class="dropdown-container" id="8">	
-<a href = "#subtitle6">	Implication Chaining
+</div>
+<a href = "#title5" class = dropdown-btn>	Implication Chaining
 </a>
+<div class="dropdown-container" id="9">	
 </nav>
