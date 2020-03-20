@@ -4,10 +4,17 @@
 
 ### Prerequisites 
 - Python 3
-	- [Downloads](https://www.python.org/downloads/)
+    - [Downloads](https://www.python.org/downloads/)
 - Python 3 Requests library
-	- [Requests](https://pypi.org/project/requests/)
+    - [Requests](https://pypi.org/project/requests/)
 - Cisco/Webex profile
+- Text editor with Python 3 syntax highlighting
+    - [Sublime 3](https://www.sublimetext.com/3)
+    - [Visual Studio Code](https://code.visualstudio.com/Download)
+    - [Notepad ++](https://notepad-plus-plus.org/downloads/)
+
+**The resulting code this part covers can be found [here](https://github.com/shailpatels/WebExCLI/blob/master/webex.py)**
+
 
 
 Before we can interact with the Webex API, we need an authentication token (also called auth token for short).
@@ -330,6 +337,13 @@ def whoAmI():
         print(json["avatar"])
         print()
 ```
+
+Remember we to call the actual function once the user types the whoami command!
+```python
+elif (cmd == "whoami"):
+    whoAmI()
+```
+
 
 ### whois <ID>
 
