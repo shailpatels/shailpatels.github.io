@@ -5,6 +5,8 @@ window.onload = function(){
 	tgt.height = '500';
 	tgt.width = '600';
 
+	tgt.focus();
+
 	document.body.appendChild(tgt);
 
 	let canvas = document.getElementById('duck-runner');
