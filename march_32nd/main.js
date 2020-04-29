@@ -62,7 +62,7 @@ window.onload = function(){
 
 
 	let slow_down = 50;
-	let score = 0 * slow_down;
+	let score = 99 * slow_down;
 	let max_score = 100 * slow_down;
 	let DEBUG = false;
 
