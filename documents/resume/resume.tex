@@ -1,0 +1,174 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[letterpaper,margin=0.5in]{geometry}
+\setlength{\voffset}{-0.25in}
+\usepackage[utf8]{inputenc}
+\usepackage{mdwlist}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{tgpagella}
+\pagestyle{empty}
+\setlength{\tabcolsep}{0em}
+
+%add links to resume
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+
+
+\newenvironment{unindentsection}[1]%
+{\begin{list}{}%
+	{\setlength{\leftmargin}{-0.5#1}}%
+	\item[]%
+}
+{\end{list}}
+
+% format two pieces of text, one left aligned and one right aligned
+\newcommand{\headerrow}[2]
+{\begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}
+	#1 &
+	#2 \\
+\end{tabular*}}
+
+% make "C++" look pretty when used in text by touching up the plus signs
+\newcommand{\CPP}
+{C\nolinebreak[4]\hspace{-.05em}\raisebox{.22ex}{\footnotesize\bf ++}}
+
+\begin{document}
+\begin{center}
+	{\LARGE \textbf{Shail Patel}}
+	\vspace{0.2em}\\
+	patels17@rpi.edu
+	 \ $\mid$ \ \href{http://shailpatels.me/}{shailpatels.me} 
+	 $\mid$ \href{https://github.com/shailpatels}{GitHub/shailpatels}\\
+\end{center}
+
+\subsection*{Education}
+\begin{itemize}
+	\parskip=0.1em
+	\item 
+	\headerrow
+		{\textbf{Rensselaer Polytechnic Institute,} \emph{(RPI)}}
+		{\emph{May 2021}}
+	\\
+	\headerrow
+		{\emph{B.S. Computer Science, B.S. Cognitive Science}}
+		{GPA 3.5/4.0}
+\end{itemize}
+\hrule
+
+\subsection*{Core Technical Skills}
+\textbf{Languages:} \  C, \ \CPP, \ C\#, \ PHP, \ Python,\ Haskell, \ Java, \ JavaScript, \ HTML,\ CSS, \ R  \vspace{0.5em}\\
+\textbf{Software \& Tools:} \ git,\ Unity3D,\ Laravel,\ RStudio, \LaTeX \vspace{0.1in}\\
+\textbf{Courses:}\, Intro to Algorithms, Data Structures, Computability \& Logic, Principles of Software, Operating Systems, Computer Communication Networks, Open Source Software, Computer Vision, Programming for Cognitive Science \& AI\\
+\hrule
+
+\subsection*{Work Experience}
+
+\begin{itemize}
+	\parskip=0.1em
+	\item
+	\headerrow
+		{\textbf{Lockheed Martin Rotary \& Mission Systems}}
+		{}
+	\\
+	\headerrow
+		{\emph{Software Engineering}}
+		{\emph{July 2020 -- December 2020}}
+	\begin{itemize*}
+		\item Systems \& embedded development in \CPP 	
+		\item Software engineering in an agile workflow 
+	\end{itemize*}
+	\item
+	\headerrow
+		{\textbf{Submitty}} {\href{https://submitty.org/}{submitty.org}}
+	\\
+	\headerrow
+		{\emph{Open Source Software Developer}}
+		{\emph{Spring 2018 -- current}}
+	\begin{itemize*}
+		\item Full stack development in a Linux, Apache, PostgreSQL, and PHP/python 
+			tech stack
+		\item Implemented a QR code scanner to detect student IDs and separate
+			batches of student exams automatically, saving hours of manual
+			data entry from instructors 
+		\item Designed and developed a system to detect and scan handwritten student
+			ID numbers on exams through computer vision and an OCR model
+		\item Google Summer of Code 2019-20 summer mentor
+		\item Continuous integration and deployment using unit \& end to end testing
+	\end{itemize*}
+	\item
+	\headerrow
+		{\textbf{Cisco Systems}}
+		{}
+	\\
+	\headerrow
+		{\emph{Technical Consulting Engineer}}
+		{\emph{January 2020 -- June 2020}}
+	\begin{itemize*}
+		\item Computer networking focusing on troubleshooting customer gear and networks
+		\item Racked, installed, and setup Cisco devices to build network recreate
+		\item Co-Managed a project to automate detection of common issues in Cisco WebEx by leading and teaching a group of new developers in python and automation tools.
+	\end{itemize*}
+
+\end{itemize}
+
+\hrule
+\subsection*{Publications}
+\begin{itemize}
+	\item
+		\headerrow
+		{A Graphical System For Logical Reasoning Using Existential Graphs}
+		{\emph{RPI Cognitive Science Dept.}}
+		\headerrow
+		{\emph{Shail Patel, Bram van Heuveln}}
+		{}
+	\item
+		\headerrow
+		{Facilitating Discussion-Based Grading and Private Channels via an Integrated Forum}
+		{\emph {SIGCSE 2019}}
+		\headerrow
+		{\emph {Andrew Aikens, Gagan Kumar, Shail Patel, Evan Maicus, Matthew Peveler, and Barbara Cutler}}
+		{}
+\end{itemize}
+\vspace{-0.1em}
+% \hrule
+% \subsection*{Personal Projects}
+% \begin{itemize}
+% 	\item 
+% 	\headerrow
+% 		{{\bf The OpenBook project}} 
+% 		{\href {https://github.com/openbook-project}{GitHub/OpenBook}}
+% 		\headerrow
+% 		{\emph{A replacement for traditional textbooks and ebooks}}
+% 		{\emph{Spring 2019 -- current}}
+% 	\begin{itemize*}
+% 		\item Built an interpreter to read a markdown-like syntax to generate
+% 			digital books in the form of HTML pages
+% 		\item HackRPI 2019 Wolfram Alpha award, 15th place overall
+% 	\end{itemize*}
+% \end{itemize}
+\vspace{-0.1em}
+\hrule
+\subsection*{Awards and Honors}
+\begin{itemize}
+    \item 
+        \headerrow
+	    {Rensselaer Medalist}
+	    {\emph{Spring 2016}}
+	    \headerrow
+	    {\emph{100,000 dollar scholarship recognizing math and science excellence}}
+	    {}
+    \item 
+        \headerrow
+	    {Cisco Certified Networking Associate \emph{(CCNA)}}
+	    {\emph{May 2020 -- May 2023}}
+	    \headerrow
+	    {Demonstrated knowledge and skills related to network fundamentals}
+	    {}
+
+\end{itemize}
+\end{document}
