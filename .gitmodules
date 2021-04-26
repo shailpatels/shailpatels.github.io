@@ -4,3 +4,6 @@
 [submodule "VisualLogic-Web"]
 	path = VisualLogic-Web
 	url = https://github.com/shailpatels/VisualLogic-Web.git
+[submodule "FiniteStates"]
+	path = FiniteStates
+	url = git@github.com:shailpatels/FiniteStates.git
