@@ -3,7 +3,7 @@
 	url = https://github.com/shailpatels/FSS.git
 [submodule "VisualLogic-Web"]
 	path = VisualLogic-Web
-	url = https://github.com/shailpatels/VisualLogic-Web.git
+	url = https://github.com/Bram-Hub/VisualLogic-Web.git
 [submodule "FiniteStates"]
 	path = FiniteStates
 	url = https://github.com/shailpatels/FiniteStates.git
