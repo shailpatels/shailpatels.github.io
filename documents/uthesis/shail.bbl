@@ -1,0 +1,225 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Deterding%
+, Dixon%
+, Khaled%
+\BCBL {}\ \BBA {} Nacke%
+}{%
+Deterding%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2011}}%
+}]{%
+deterding2011game}
+\APACinsertmetastar {%
+deterding2011game}%
+\begin{APACrefauthors}%
+Deterding, S.%
+, Dixon, D.%
+, Khaled, R.%
+\BCBL {}\ \BBA {} Nacke, L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {From game design elements to gamefulness: defining
+  ``gamification''} {From game design elements to gamefulness: defining
+  ``gamification''}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Proceedings of the 15th international academic MindTrek
+  conference: Envisioning future media environments} {Proceedings of the 15th
+  international academic mindtrek conference: Envisioning future media
+  environments}\ (\BPGS\ 9--15).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Hamari%
+, Koivisto%
+\BCBL {}\ \BBA {} Sarsa%
+}{%
+Hamari%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2014}}%
+}]{%
+hamari2014does}
+\APACinsertmetastar {%
+hamari2014does}%
+\begin{APACrefauthors}%
+Hamari, J.%
+, Koivisto, J.%
+\BCBL {}\ \BBA {} Sarsa, H.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Does gamification work?--a literature review of
+  empirical studies on gamification} {Does gamification work?--a literature
+  review of empirical studies on gamification}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {2014 47th Hawaii international conference on system
+  sciences} {2014 47th hawaii international conference on system sciences}\
+  (\BPGS\ 3025--3034).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Henrich%
+, Heine%
+\BCBL {}\ \BBA {} Norenzayan%
+}{%
+Henrich%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2010}}%
+}]{%
+henrich2010weirdest}
+\APACinsertmetastar {%
+henrich2010weirdest}%
+\begin{APACrefauthors}%
+Henrich, J.%
+, Heine, S\BPBI J.%
+\BCBL {}\ \BBA {} Norenzayan, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2010}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The weirdest people in the world?} {The weirdest people
+  in the world?}{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Behavioral and brain sciences}{33}{2-3}{61--83}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Kalyuga%
+}{%
+Kalyuga%
+}{%
+{\protect \APACyear {2007}}%
+}]{%
+kalyuga2007expertise}
+\APACinsertmetastar {%
+kalyuga2007expertise}%
+\begin{APACrefauthors}%
+Kalyuga, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2007}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Expertise reversal effect and its implications for
+  learner-tailored instruction} {Expertise reversal effect and its implications
+  for learner-tailored instruction}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Educational psychology review}{19}{4}{509--539}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Kalyuga%
+}{%
+Kalyuga%
+}{%
+{\protect \APACyear {2009}}%
+}]{%
+kalyuga2009expertise}
+\APACinsertmetastar {%
+kalyuga2009expertise}%
+\begin{APACrefauthors}%
+Kalyuga, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2009}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The expertise reversal effect} {The expertise reversal
+  effect}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Managing cognitive load in adaptive multimedia learning}
+  {Managing cognitive load in adaptive multimedia learning}\ (\BPGS\ 58--80).
+\newblock
+\APACaddressPublisher{}{IGI Global}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Kruger%
+\ \BBA {} Dunning%
+}{%
+Kruger%
+\ \BBA {} Dunning%
+}{%
+{\protect \APACyear {1999}}%
+}]{%
+kruger1999unskilled}
+\APACinsertmetastar {%
+kruger1999unskilled}%
+\begin{APACrefauthors}%
+Kruger, J.%
+\BCBT {}\ \BBA {} Dunning, D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1999}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Unskilled and unaware of it: how difficulties in
+  recognizing one's own incompetence lead to inflated self-assessments.}
+  {Unskilled and unaware of it: how difficulties in recognizing one's own
+  incompetence lead to inflated self-assessments.}{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of personality and social
+  psychology}{77}{6}{1121}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Lateef%
+}{%
+Lateef%
+}{%
+{\protect \APACyear {2010}}%
+}]{%
+lateef2010simulation}
+\APACinsertmetastar {%
+lateef2010simulation}%
+\begin{APACrefauthors}%
+Lateef, F.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2010}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Simulation-based learning: Just like the real thing}
+  {Simulation-based learning: Just like the real thing}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Emergencies, Trauma and Shock}{3}{4}{348}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Majuri%
+, Koivisto%
+\BCBL {}\ \BBA {} Hamari%
+}{%
+Majuri%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
+}]{%
+majuri2018gamification}
+\APACinsertmetastar {%
+majuri2018gamification}%
+\begin{APACrefauthors}%
+Majuri, J.%
+, Koivisto, J.%
+\BCBL {}\ \BBA {} Hamari, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Gamification of education and learning: A review of
+  empirical literature} {Gamification of education and learning: A review of
+  empirical literature}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Proceedings of the 2nd international GamiFIN conference,
+  GamiFIN 2018.} {Proceedings of the 2nd international gamifin conference,
+  gamifin 2018.}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

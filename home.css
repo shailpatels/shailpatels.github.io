@@ -181,6 +181,10 @@ a:hover{
     justify-self:center;
 }
 
+.center > a {
+    text-decoration: none;
+}
+
 .info{
     margin-left: 20px;
     margin-right:20px;
@@ -207,25 +211,17 @@ a:hover{
     grid-row-start: 1;
 }
 
-#contact > a:link{
+.highlight > a:link{
     color:inherit;
 }
-#contact > a:visited{
+
+.highlight > a:visited{
     color:inherit;
 }
-#contact > a:hover{
+.highlight > a:hover{
     color:var(--primary);
 }
 
-#social > a:link{
-    color:inherit;
-}
-#social > a:visited{
-    color:inherit;
-}
-#social > a:hover{
-    color:var(--primary);
-}
-#pad{
+.pad{
     margin: 10px;
 }
